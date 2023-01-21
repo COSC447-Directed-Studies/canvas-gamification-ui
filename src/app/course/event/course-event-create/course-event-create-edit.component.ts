@@ -23,6 +23,7 @@ export class CourseEventCreateEditComponent implements OnInit {
     timeOptions = tuiCreateTimePeriods()
     categories: Category[]
     difficulties: Difficulty[]
+    clicked = false
 
     constructor(
         private route: ActivatedRoute,
@@ -83,6 +84,7 @@ export class CourseEventCreateEditComponent implements OnInit {
      * @param formData - grabs the components formData and creates a request based on that
      */
     async submitEvent(formData: FormGroup) {
+        this.clicked = true
         const ourEvent = CourseEventForm.formatFormData(formData, this.courseId, this.eventId)
         if (this.eventId) { // If this is a previously existing event
             await this.courseEventService.updateCourseEvent(ourEvent).toPromise()

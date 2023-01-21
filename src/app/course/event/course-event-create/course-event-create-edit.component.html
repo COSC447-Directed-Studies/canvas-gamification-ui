@@ -144,7 +144,7 @@
         </div>
         <div class="tui-form__buttons">
             <button
-                [disabled]="formData.invalid"
+                [disabled]="formData.invalid || clicked"
                 appearance="primary"
                 aria-label="Submit"
                 class="tui-form__button"
