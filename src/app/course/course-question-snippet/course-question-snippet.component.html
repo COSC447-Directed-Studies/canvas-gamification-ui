@@ -1,16 +1,16 @@
 <ng-container *ngIf="uqjs">
-    <button
-        *ngIf="event.type==='ASSIGNMENT'||event.type==='EXAM'"
-        appearance="flat"
-        [routerLink]="['..']"
-        icon="tuiIconArrowLeft"
-        aria-label="Back to Assignments and Exams"
-        size="s"
-        tuiButton
-    >
-        Assignments and Exams
-    </button>
     <div [class.tui-container]="eventId" [class.tui-container_adaptive]="eventId">
+        <button
+            *ngIf="event.type === 'ASSIGNMENT' || event.type === 'EXAM'"
+            appearance="flat"
+            [routerLink]="['..']"
+            icon="tuiIconArrowLeft"
+            aria-label="Back to Assignments and Exams"
+            size="s"
+            tuiButton
+        >
+            Back to Assignments and Exams
+        </button>
         <div *ngIf="eventId" class="flex justify-between items-center">
             <h1 class="tui-text_h3 tui-space_vertical-10">{{ event.name }}</h1>
             <div>
