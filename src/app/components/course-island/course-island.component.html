@@ -1,4 +1,4 @@
-<tui-island class="course-island tui-island_hoverable"
+<tui-island [ngClass]="(user?.is_teacher) || (hasViewPermission && endDate > currentDate && user?.is_student) || (!course.is_registered && endDate > currentDate && user?.is_student) ?'course-island tui-island_hoverable':'course-island'"
             [routerLink]="user?.is_teacher || (hasViewPermission && endDate > currentDate && user?.is_student)? ['/course', course.id] : ['/course', course.id, 'register']"
             size="m">
     <ng-container *ngIf="!skeleton else skeletonTemplate">
