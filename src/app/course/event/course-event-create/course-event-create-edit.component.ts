@@ -77,16 +77,16 @@ export class CourseEventCreateEditComponent implements OnInit {
         this.getQuestionSets().removeAt(index)
     }
 
-    getTitle(): string{
-        if(this.eventId === null){
+    getTitle(): string {
+        if (this.eventId === null) {
             return 'Create New'
         } else {
             return 'Edit'
         }
     }
 
-    getButtonName(): string{
-        if(this.eventId === null){
+    getButtonName(): string {
+        if (this.eventId === null) {
             return 'Create'
         } else {
             return 'Save Changes'
