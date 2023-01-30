@@ -1,7 +1,6 @@
 <ng-container *ngIf="uqjs">
     <div [class.tui-container]="eventId" [class.tui-container_adaptive]="eventId">
         <a
-            *ngIf="event.type === 'ASSIGNMENT' || event.type === 'EXAM' || event.type === 'CHALLENGE'"
             [routerLink]="['..']"
             icon="tuiIconArrowLeft"
             size="s"
