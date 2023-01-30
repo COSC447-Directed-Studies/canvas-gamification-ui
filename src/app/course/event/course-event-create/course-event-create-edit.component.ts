@@ -77,7 +77,7 @@ export class CourseEventCreateEditComponent implements OnInit {
         this.getQuestionSets().removeAt(index)
     }
 
-    createOrEdit(): string{
+    getTitle(): string{
         if(this.eventId === null){
             return 'Create New'
         } else {
@@ -85,7 +85,7 @@ export class CourseEventCreateEditComponent implements OnInit {
         }
     }
 
-    createOrSaveChanges(): string{
+    getButtonName(): string{
         if(this.eventId === null){
             return 'Create'
         } else {
