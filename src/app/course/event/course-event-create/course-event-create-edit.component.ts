@@ -19,7 +19,6 @@ export class CourseEventCreateEditComponent implements OnInit {
     localEventTypes: EventType[] = [['ASSIGNMENT', 'Assignment'], ["EXAM", "Exam"]]
     courseId: number
     eventId: number = null
-    createOrEdit = 'Create New'
     createOrSaveChanges = 'Create'
     formData: FormGroup
     timeOptions = tuiCreateTimePeriods()
@@ -50,7 +49,6 @@ export class CourseEventCreateEditComponent implements OnInit {
             this.courseEventService.getCourseEvent(this.eventId).subscribe(event => {
                 this.formData = CourseEventForm.createFormWithData(event)
             })
-            this.createOrEdit = 'Edit'
             this.createOrSaveChanges = 'Save Changes'
         }
         this.categoryService.getCategories().subscribe(
@@ -79,6 +77,14 @@ export class CourseEventCreateEditComponent implements OnInit {
 
     removeChallengeQuestionSet(index: number): void {
         this.getQuestionSets().removeAt(index)
+    }
+
+    createOrEdit(): string{
+        if(this.eventId === null){
+            return 'Create New'
+        } else {
+            return 'Edit'
+        }
     }
 
     /**
