@@ -1,6 +1,6 @@
 <div class="tui-container tui-container_adaptive">
     <form (ngSubmit)="submitEvent(formData)" [formGroup]="formData">
-        <h2 class="tui-form__header">{{createOrEdit}} Event</h2>
+        <h2 class="tui-form__header">{{createOrEdit()}} Event</h2>
         <div class="tui-form__row">
             <tui-input aria-label="Event Name" formControlName="name">Event Name</tui-input>
             <tui-field-error formControlName="name"></tui-field-error>
@@ -152,7 +152,7 @@
                 tuiButton
                 type="submit"
             >
-                {{createOrSaveChanges}}
+                {{createOrSaveChanges()}}
             </button>
             <a
                 [routerLink]="['/course', courseId, 'assignments-exams']"
