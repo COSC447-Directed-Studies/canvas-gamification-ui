@@ -27,5 +27,18 @@ export class CourseIslandComponent implements OnInit {
         this.currentDate = new Date()
     }
 
+    canView(): boolean {
+        return (
+            this.user?.is_teacher ||
+            (
+                (this.hasViewPermission || !this.course.is_registered)
+                && this.endDate > this.currentDate && this.user?.is_student
+            )
+        )
+    }
+
+    getIslandClass(): string {
+        return `course-island ${this.canView() ? 'tui-island_hoverable' : ''}`
+    }
 
 }
