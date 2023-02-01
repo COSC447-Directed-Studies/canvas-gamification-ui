@@ -30,7 +30,7 @@ export class CourseIslandComponent implements OnInit {
         return (
             this.user?.is_teacher ||
             (
-                (this.hasViewPermission || !this.course.is_registered)
+                (this.course.has_view_permission || !this.course.is_registered)
                 && this.endDate > this.currentDate && this.user?.is_student
             )
         )
