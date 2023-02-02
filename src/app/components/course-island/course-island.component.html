@@ -1,10 +1,6 @@
 <tui-island
     [class]="getIslandClass()"
-    [routerLink]="user?.is_teacher || (course.has_view_permission && endDate > currentDate && user?.is_student)?
-        ['/course', course?.id] :
-        (!course.is_registered && endDate > currentDate && user?.is_student)?
-        ['/course', course?.id, 'register'] :
-        []"
+    (click)="redirect()"
     size="m">
     <ng-container *ngIf="!skeleton else skeletonTemplate">
         <div
