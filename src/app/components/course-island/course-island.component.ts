@@ -50,14 +50,13 @@ export class CourseIslandComponent implements OnInit {
                 && this.user?.is_student)
             )
         ) {
-            this.router.navigate(['/course', this.course?.id])
+            this.router.navigate(['/course', this.course?.id]).then()
         } else if (
             !this.course.is_registered
             && this.endDate > this.currentDate
             && this.user?.is_student
         ) {
-            this.router.navigate(['/course', this.course?.id, 'register'])
+            this.router.navigate(['/course', this.course?.id, 'register']).then()
         }
-        console.log("got here")
     }
 }
