@@ -73,6 +73,14 @@
         >
             The {{getEventType()}} is closed.
         </tui-notification>
+        <tui-notification
+            class="mb-6"
+        >
+            To add questions go to the
+            <a [routerLink]="['../../practice/concepts']" class="colorpls">
+                Concept Map
+            </a>
+        </tui-notification>
         <ng-container *ngIf="event.is_open || course.has_create_event_permission">
             <div
                 *ngIf="event.type==='CHALLENGE' && team"
