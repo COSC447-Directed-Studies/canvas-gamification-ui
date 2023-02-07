@@ -1,4 +1,7 @@
-<tui-island class="course-island" size="m">
+<tui-island
+    [class]="getIslandClass()"
+    (click)="redirect()"
+    size="m">
     <ng-container *ngIf="!skeleton else skeletonTemplate">
         <div
             [style.backgroundColor]="course.name | getColorFromString"
@@ -18,7 +21,7 @@
         ></tui-tag>
         <div class="tui-form__buttons">
             <a
-                *ngIf = "user?.is_teacher"
+                *ngIf="user?.is_teacher"
                 appearance="primary"
                 [routerLink]="['/course', course.id]"
                 class="tui-form__button"
@@ -28,7 +31,7 @@
                 View
             </a>
             <a
-                *ngIf="hasViewPermission && endDate > currentDate && user?.is_student"
+                *ngIf="course.has_view_permission && user?.is_student"
                 appearance="primary"
                 [routerLink]="['/course', course.id]"
                 class="tui-form__button"
@@ -38,8 +41,7 @@
                 Open
             </a>
             <a
-                *ngIf="!course.is_registered && endDate > currentDate && user?.is_student"
-                [appearance]="hasViewPermission ? 'whiteblock-active' : 'primary'"
+                *ngIf="!course.has_view_permission && endDate > currentDate && user?.is_student"
                 [routerLink]="['/course', course.id, 'register']"
                 class="tui-form__button"
                 size="m"
