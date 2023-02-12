@@ -11,6 +11,7 @@ export class FooterComponent {
     constructor(private headerComponent: HeaderComponent) {
     }
 
+    // this only updates when the page is reloaded
     public isNightMode(): boolean {
         console.log(this.headerComponent.isNightMode())
         return this.headerComponent.isNightMode()
