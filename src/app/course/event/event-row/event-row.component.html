@@ -79,6 +79,7 @@
         <ng-template #content>
             <tui-data-list role="menu">
                 <a
+                    *ngIf="event.is_open"
                     [routerLink]="['/course', event.course, 'assignments-exams', event.id, 'edit']"
                     aria-label="Edit"
                     tuiOption
