@@ -142,7 +142,7 @@
                             </a>
                         </ng-template>
                         <a
-                            *ngIf="event.has_edit_permission"
+                            *ngIf="event.has_edit_permission && event.is_open"
                             [routerLink]="['problem', uqj.question.id, 'edit']"
                             appearance="primary"
                             class="tui-form__button"
@@ -152,7 +152,7 @@
                             Edit
                         </a>
                         <a
-                            *ngIf="event.has_edit_permission"
+                            *ngIf="event.has_edit_permission && event.is_open"
                             (click)="removeQuestion(uqj.question.id)"
                             appearance="accent"
                             class="tui-form__button"
