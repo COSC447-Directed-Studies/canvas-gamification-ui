@@ -5,7 +5,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 100%;
+    height: fit-content;
+    width: fit-content;
+}
+
+.testing {
+    width: fit-content;
 }
 
 .practice-background {
@@ -27,6 +32,7 @@
 }
 
 .practice-tile {
+    overflow: hidden;
     @include screen-lg {
         flex-basis: calc(30% - 4.5rem);
     }
@@ -47,19 +53,4 @@
 
 .flex-space {
     flex: 1 1;
-}
-
-.child {
-    position: absolute;
-    z-index: 2;
-    bottom: 95%;
-}
-
-.one {
-
-    overflow: hidden;
-}
-
-.stepover{
-    margin-right: calc(100% + 1 * var(--tui-padding-l));
 }
