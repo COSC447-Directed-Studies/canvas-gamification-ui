@@ -126,7 +126,7 @@
             [routerLink]="['/course', event.course, 'assignments-exams', event.id, 'stats']"
             [tuiHint]="statsTooltip"
             class="tui-space_right-2 tui-space_vertical-2"
-            icon="tuiIconBarChart2"
+            icon="tuiIconChartLineLarge"
             size="s"
             tuiDescribedBy="stats"
             tuiHintDirection="top-left"
@@ -138,6 +138,8 @@
             Stats
         </ng-template>
         <button
+            (click)="setFeatured()"
+            [disabled]="event.featured"
             [tuiHint]="featuredTooltip"
             class="tui-space_vertical-2"
             icon="tuiIconStar"
