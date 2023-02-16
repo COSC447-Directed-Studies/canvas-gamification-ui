@@ -63,6 +63,7 @@
         >
             View
         </a>
+        <!--
         <tui-hosted-dropdown
             *ngIf="event.has_edit_permission"
             [content]="content"
@@ -102,6 +103,54 @@
                     Set Featured
                 </a>
             </tui-data-list>
+        </ng-template>
+        -->
+    </div>
+    <div class="questions-table__actions">
+        <a
+            [routerLink]="['/course', event.course, 'assignments-exams', event.id, 'edit']"
+            [tuiHint]="editTooltip"
+            class="tui-space_right-2 tui-space_vertical-2"
+            icon="tuiIconEdit"
+            size="s"
+            tuiDescribedBy="edit"
+            tuiHintDirection="top-left"
+            tuiHintId="edit"
+            tuiHintMode="onDark"
+            tuiIconButton
+        ></a>
+        <ng-template #editTooltip>
+            Edit
+        </ng-template>
+        <a
+            [routerLink]="['/course', event.course, 'assignments-exams', event.id, 'stats']"
+            [tuiHint]="statsTooltip"
+            class="tui-space_right-2 tui-space_vertical-2"
+            icon="tuiIconBarChart2"
+            size="s"
+            tuiDescribedBy="stats"
+            tuiHintDirection="top-left"
+            tuiHintId="stats"
+            tuiHintMode="onDark"
+            tuiIconButton
+        ></a>
+        <ng-template #statsTooltip>
+            Stats
+        </ng-template>
+        <button
+            [tuiHint]="featuredTooltip"
+            class="tui-space_vertical-2"
+            icon="tuiIconStar"
+            size="s"
+            tuiDescribedBy="set featured"
+            tuiHintDirection="top-left"
+            tuiHintId="set featured"
+            tuiHintMode="onDark"
+            tuiIconButton
+            type="button"
+        ></button>
+        <ng-template #featuredTooltip>
+            Set featured
         </ng-template>
     </div>
 </div>

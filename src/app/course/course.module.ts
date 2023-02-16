@@ -48,7 +48,7 @@ import {
 import {
     TuiButtonModule,
     TuiCalendarModule,
-    TuiDataListModule,
+    TuiDataListModule, TuiDescribedByModule,
     TuiDialogModule,
     TuiErrorModule,
     TuiHintModule,
@@ -197,6 +197,7 @@ import {LeaderBoardPageComponent} from './leader-board-page/leader-board-page.co
         TuiTextAreaModule,
         TuiTextfieldControllerModule,
         DragulaModule.forRoot(),
+        TuiDescribedByModule,
     ],
     providers: [
         CourseEventService,
