@@ -53,16 +53,17 @@
             Grade: {{ event.total_event_grade | number: '1.0-1' || 'TBA'}}%
         </ng-template>
     </div>
-    <div class="questions-table__actions">
-        <a *ngIf="user.is_student"
-           [routerLink]="['/course', event.course, 'assignments-exams', event.id]"
-           appearance="primary"
-           [disabled]="!event.is_allowed_to_open && !user?.is_teacher"
-           size="s"
-           tuiButton
+    <div class="flex items-center">
+        <button *ngIf="user.is_student"
+                [routerLink]="['/course', event.course, 'assignments-exams', event.id]"
+                appearance="primary"
+                [disabled]="!event.is_allowed_to_open && !user?.is_teacher"
+                class="tui-space_right-2 tui-space_vertical-2"
+                size="s"
+                tuiButton
         >
             View
-        </a>
+        </button>
         <button *ngIf="user.is_teacher"
                 [routerLink]="['/course', event.course, 'assignments-exams', event.id]"
                 [disabled]="!event.is_allowed_to_open && !user?.is_teacher"
