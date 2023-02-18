@@ -54,7 +54,7 @@
         </ng-template>
     </div>
     <div class="questions-table__actions" *ngIf="event.has_edit_permission">
-        <a
+        <button
             [routerLink]="['/course', event.course, 'assignments-exams', event.id]"
             [disabled]="!event.is_allowed_to_open && !user?.is_teacher"
             [tuiHint]="viewTooltip"
@@ -66,11 +66,11 @@
             tuiHintId="edit"
             tuiHintMode="onDark"
             tuiIconButton
-        ></a>
+        ></button>
         <ng-template #viewTooltip>
             View
         </ng-template>
-        <a
+        <button
             [routerLink]="['/course', event.course, 'assignments-exams', event.id, 'edit']"
             [tuiHint]="editTooltip"
             class="tui-space_right-2 tui-space_vertical-2"
@@ -81,11 +81,11 @@
             tuiHintId="edit"
             tuiHintMode="onDark"
             tuiIconButton
-        ></a>
+        ></button>
         <ng-template #editTooltip>
             Edit
         </ng-template>
-        <a
+        <button
             [routerLink]="['/course', event.course, 'assignments-exams', event.id, 'stats']"
             [tuiHint]="statsTooltip"
             class="tui-space_right-2 tui-space_vertical-2"
@@ -96,7 +96,7 @@
             tuiHintId="stats"
             tuiHintMode="onDark"
             tuiIconButton
-        ></a>
+        ></button>
         <ng-template #statsTooltip>
             Stats
         </ng-template>
