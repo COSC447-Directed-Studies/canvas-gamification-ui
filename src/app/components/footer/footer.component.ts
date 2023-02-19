@@ -1,5 +1,6 @@
 import {Component} from '@angular/core'
 import {HeaderComponent} from '../header/header.component'
+import {NightModeService} from "@app/_services/api/night-mode.service"
 
 @Component({
     providers: [HeaderComponent],
@@ -8,12 +9,10 @@ import {HeaderComponent} from '../header/header.component'
     styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-    constructor(private headerComponent: HeaderComponent) {
+    constructor(private nightModeService: NightModeService) {
     }
 
-    // this only updates when the page is reloaded
-    public isNightMode(): boolean {
-        console.log(this.headerComponent.isNightMode())
-        return this.headerComponent.isNightMode()
+    getNightMode(): boolean {
+        return this.nightModeService.getNightMode()
     }
 }
