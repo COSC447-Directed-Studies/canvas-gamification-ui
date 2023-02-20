@@ -28,8 +28,4 @@ export class CoursePracticePageComponent implements OnInit {
             this.course = course
         })
     }
-
-    getWidth(): number {
-        return document.getElementById('Target').offsetWidth
-    }
 }
