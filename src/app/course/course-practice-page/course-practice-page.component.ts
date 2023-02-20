@@ -28,4 +28,5 @@ export class CoursePracticePageComponent implements OnInit {
             this.course = course
         })
     }
+
 }
