@@ -2,7 +2,7 @@ import {Component} from '@angular/core'
 import {User} from '@app/_models'
 import {AuthenticationService} from '@app/_services/api/authentication'
 import {ActivatedRoute, Router} from '@angular/router'
-import {NightModeService} from "@app/_services/api/night-mode.service"
+import {NightModeService} from "@app/_services/night-mode.service"
 
 @Component({
     selector: 'app-header',

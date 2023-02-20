@@ -13,19 +13,20 @@
                 <p class="tui-island__paragraph tui-text_body-xl flex-space">
                     Improve your skills by solving practice
                     questions.</p>
-                <div class="course-view-button tui-space_top-3">
-                    <a
-                        appearance="primary"
-                        [routerLink]="['/course', courseId, 'practice']"
-                        (click)="practiceClickLog()"
-                        class="tui-form__button"
-                        size="m"
-                        tuiButton
-                    >
-                        View
-                    </a>
+                <div class="flex items-end justify-between">
+                    <div class="course-view-button tui-space_top-3">
+                        <a
+                            appearance="primary"
+                            [routerLink]="['/course', courseId, 'practice']"
+                            (click)="practiceClickLog()"
+                            class="tui-form__button"
+                            size="m"
+                            tuiButton
+                        >
+                            View
+                        </a>
+                    </div>
                     <tui-marker-icon *ngIf="user.is_teacher"
-                                     style="float: right"
                                      size="s"
                                      src="tuiIconInfo"
                                      tuiHintMode="onDark"

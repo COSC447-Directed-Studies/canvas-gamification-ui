@@ -1,6 +1,6 @@
 import {Component} from '@angular/core'
 import {HeaderComponent} from '../header/header.component'
-import {NightModeService} from "@app/_services/api/night-mode.service"
+import {NightModeService} from "@app/_services/night-mode.service"
 
 @Component({
     providers: [HeaderComponent],
