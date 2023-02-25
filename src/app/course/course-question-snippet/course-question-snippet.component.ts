@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core'
+import {Component, Inject, OnInit} from '@angular/core'
 import {Course, CourseEvent, UQJ, User} from '@app/_models'
 import {AuthenticationService} from '@app/_services/api/authentication'
 import {ActivatedRoute, Router} from '@angular/router'
@@ -9,8 +9,14 @@ import {CourseService} from '@app/course/_services/course.service'
 import {TuiStatusT} from "@taiga-ui/kit"
 import {Team} from "@app/_models/team"
 import {TeamService} from "@app/course/_services/team.service"
-import {TuiNotification, TuiNotificationsService} from "@taiga-ui/core"
+import {
+    TuiDialogContext,
+    TuiNotification,
+    TuiNotificationsService,
+    TuiDialogService
+} from "@taiga-ui/core"
 import {startCase} from "lodash"
+import {PolymorpheusContent} from "@tinkoff/ng-polymorpheus"
 
 @Component({
     selector: 'app-course-question-snippet',
@@ -36,6 +42,7 @@ export class CourseQuestionSnippetComponent implements OnInit {
         private courseService: CourseService,
         private teamService: TeamService,
         private readonly notificationService: TuiNotificationsService,
+        @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
     ) {
         this.authenticationService.currentUser.subscribe(user => this.user = user)
     }
@@ -139,5 +146,19 @@ export class CourseQuestionSnippetComponent implements OnInit {
             case 'TOP_TEAMS':
                 return `Teams earn tokens by staying on the top ${this.event.challenge_type_value} teams of this challenge. Each member gets the number of tokens equivalent to team tokens as the challenge ends.`
         }
+    }
+
+    /**
+     * Opens the dialog service based on the template passed
+     * @param content - the template to be used
+     */
+    openEditQuestionInClosedEventDialog(
+        content: PolymorpheusContent<TuiDialogContext>
+    ): void {
+
+        this.dialogService.open(content, {
+            closeable: false,
+            label: 'Edit Question in Finished Event?'
+        }).subscribe()
     }
 }

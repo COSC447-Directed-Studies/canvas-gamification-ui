@@ -1,8 +1,14 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core'
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core'
 import {CourseEvent, User} from "@app/_models"
 import {AuthenticationService} from "@app/_services/api/authentication"
-import {TuiNotification, TuiNotificationsService} from "@taiga-ui/core"
+import {
+    TuiNotification,
+    TuiNotificationsService,
+    TuiDialogContext,
+    TuiDialogService
+} from "@taiga-ui/core"
 import {CourseEventService} from "@app/course/_services/course-event.service"
+import {PolymorpheusContent} from "@tinkoff/ng-polymorpheus"
 
 @Component({
     selector: 'app-event-row',
@@ -18,8 +24,10 @@ export class EventRowComponent implements OnInit {
     constructor(
         private readonly authenticationService: AuthenticationService,
         private readonly courseEventService: CourseEventService,
-        private readonly notificationsService: TuiNotificationsService
-    ) { }
+        private readonly notificationsService: TuiNotificationsService,
+        @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
+    ) {
+    }
 
     ngOnInit(): void {
         this.authenticationService.currentUser.subscribe(user => this.user = user)
@@ -32,5 +40,19 @@ export class EventRowComponent implements OnInit {
             }).subscribe()
             this.reload.emit(true)
         })
+    }
+
+    /**
+     * Opens the dialog service based on the template passed
+     * @param content - the template to be used
+     */
+    openEditClosedEventDialog(
+        content: PolymorpheusContent<TuiDialogContext>
+    ): void {
+
+        this.dialogService.open(content, {
+            closeable: false,
+            label: 'Edit Finished Event?'
+        }).subscribe()
     }
 }
