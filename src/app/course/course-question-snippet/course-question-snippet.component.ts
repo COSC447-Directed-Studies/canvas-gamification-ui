@@ -151,6 +151,8 @@ export class CourseQuestionSnippetComponent implements OnInit {
     /**
      * Opens the dialog service based on the template passed
      * @param content - the template to be used
+     * @param openDialog - the boolean condition used to check if template should be opened
+     * @param uqj - the question to be edited
      */
     openEditQuestionInEventDialog(
         content: PolymorpheusContent<TuiDialogContext>,
