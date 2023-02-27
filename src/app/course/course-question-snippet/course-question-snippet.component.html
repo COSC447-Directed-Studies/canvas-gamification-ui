@@ -168,18 +168,8 @@
                             </a>
                         </ng-template>
                         <a
-                            *ngIf="event.has_edit_permission && (event.is_closed && !event.is_not_available_yet)"
-                            (click)="openEditQuestionInClosedEventDialog(editQuestion)"
-                            appearance="primary"
-                            class="tui-form__button"
-                            size="s"
-                            tuiButton
-                        >
-                            Edit
-                        </a>
-                        <a
-                            *ngIf="event.has_edit_permission && (event.is_open || event.is_not_available_yet)"
-                            [routerLink]="['problem', uqj.question.id, 'edit']"
+                            *ngIf="event.has_edit_permission"
+                            (click)="openEditQuestionInEventDialog(editQuestion, event.is_closed && !event.is_not_available_yet, uqj)"
                             appearance="primary"
                             class="tui-form__button"
                             size="s"

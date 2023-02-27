@@ -152,13 +152,18 @@ export class CourseQuestionSnippetComponent implements OnInit {
      * Opens the dialog service based on the template passed
      * @param content - the template to be used
      */
-    openEditQuestionInClosedEventDialog(
-        content: PolymorpheusContent<TuiDialogContext>
+    openEditQuestionInEventDialog(
+        content: PolymorpheusContent<TuiDialogContext>,
+        openDialog: boolean,
+        uqj: UQJ
     ): void {
-
-        this.dialogService.open(content, {
-            closeable: false,
-            label: 'Edit Question in Finished Event?'
-        }).subscribe()
+        if(openDialog) {
+            this.dialogService.open(content, {
+                closeable: false,
+                label: 'Edit Question in Finished Event?'
+            }).subscribe()
+        } else{
+            this.router.navigate(['/course', this.event.course, 'assignments-exams', this.eventId, 'problem', uqj.question.id, 'edit']).then()
+        }
     }
 }

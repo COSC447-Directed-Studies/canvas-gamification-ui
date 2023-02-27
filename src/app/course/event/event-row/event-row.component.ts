@@ -8,6 +8,7 @@ import {
     TuiDialogService
 } from "@taiga-ui/core"
 import {CourseEventService} from "@app/course/_services/course-event.service"
+import {Router} from "@angular/router"
 import {PolymorpheusContent} from "@tinkoff/ng-polymorpheus"
 
 @Component({
@@ -25,6 +26,7 @@ export class EventRowComponent implements OnInit {
         private readonly authenticationService: AuthenticationService,
         private readonly courseEventService: CourseEventService,
         private readonly notificationsService: TuiNotificationsService,
+        private router: Router,
         @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
     ) {
     }
@@ -45,14 +47,19 @@ export class EventRowComponent implements OnInit {
     /**
      * Opens the dialog service based on the template passed
      * @param content - the template to be used
+     * @param openDialog - the boolean condition used to check if template should be opened
      */
-    openEditClosedEventDialog(
-        content: PolymorpheusContent<TuiDialogContext>
+    openEditDialog(
+        content: PolymorpheusContent<TuiDialogContext>,
+        openDialog: boolean
     ): void {
-
-        this.dialogService.open(content, {
-            closeable: false,
-            label: 'Edit Finished Event?'
-        }).subscribe()
+        if(openDialog) {
+            this.dialogService.open(content, {
+                closeable: false,
+                label: 'Edit Finished Event?'
+            }).subscribe()
+        } else{
+            this.router.navigate(['/course', this.event.course, 'assignments-exams', this.event.id, 'edit']).then()
+        }
     }
 }

@@ -80,20 +80,8 @@
         <ng-template #viewTooltip>
             View
         </ng-template>
-        <button *ngIf="event.has_edit_permission && (event.is_closed && !event.is_not_available_yet)"
-                (click)="openEditClosedEventDialog(editEvent)"
-                [tuiHint]="editTooltip"
-                class="tui-space_right-2 tui-space_vertical-2"
-                icon="tuiIconEdit"
-                size="s"
-                tuiDescribedBy="edit"
-                tuiHintDirection="top-left"
-                tuiHintId="edit"
-                tuiHintMode="onDark"
-                tuiIconButton
-        ></button>
-        <button *ngIf="event.has_edit_permission && (event.is_open || event.is_not_available_yet)"
-                [routerLink]="['/course', event.course, 'assignments-exams', event.id, 'edit']"
+        <button *ngIf="event.has_edit_permission"
+                (click)="openEditDialog(editEvent, event.is_closed && !event.is_not_available_yet)"
                 [tuiHint]="editTooltip"
                 class="tui-space_right-2 tui-space_vertical-2"
                 icon="tuiIconEdit"
