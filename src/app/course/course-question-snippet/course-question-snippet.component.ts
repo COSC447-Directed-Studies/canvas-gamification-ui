@@ -159,12 +159,12 @@ export class CourseQuestionSnippetComponent implements OnInit {
         openDialog: boolean,
         uqj: UQJ
     ): void {
-        if(openDialog) {
+        if (openDialog) {
             this.dialogService.open(content, {
                 closeable: false,
                 label: 'Edit Question in Finished Assessment?'
             }).subscribe()
-        } else{
+        } else {
             this.router.navigate(['/course', this.event.course, 'assignments-exams', this.eventId, 'problem', uqj.question.id, 'edit']).then()
         }
     }

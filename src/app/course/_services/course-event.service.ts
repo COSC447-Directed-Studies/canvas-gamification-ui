@@ -157,7 +157,7 @@ export class CourseEventService {
         ))
     }
 
-    getEventLeaderBoard(eventId: number): Observable<LeaderboardElement[]>{
+    getEventLeaderBoard(eventId: number): Observable<LeaderboardElement[]> {
         const url = this.apiService.getURL('event', eventId, 'leader-board')
         return this.http.get<LeaderboardElement[]>(url)
             .pipe(catchError(
