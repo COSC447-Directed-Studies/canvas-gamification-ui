@@ -37,7 +37,7 @@ export class EventRowComponent implements OnInit {
 
     setFeatured() {
         return this.courseEventService.setFeatured(this.event.id).subscribe(() => {
-            this.notificationsService.show('Event successfully marked as featured.', {
+            this.notificationsService.show('Assessment successfully marked as featured.', {
                 status: TuiNotification.Success,
             }).subscribe()
             this.reload.emit(true)
@@ -56,7 +56,7 @@ export class EventRowComponent implements OnInit {
         if(openDialog) {
             this.dialogService.open(content, {
                 closeable: false,
-                label: 'Edit Finished Event?'
+                label: 'Edit Finished Assessment?'
             }).subscribe()
         } else{
             this.router.navigate(['/course', this.event.course, 'assignments-exams', this.event.id, 'edit']).then()

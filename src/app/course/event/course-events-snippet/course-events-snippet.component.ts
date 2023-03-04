@@ -92,7 +92,7 @@ export class CourseEventsSnippetComponent implements OnInit {
     setFeatured(eventId: number) {
         return this.courseEventService.setFeatured(eventId).subscribe(() => {
             this.init()
-            this.notificationsService.show('Event successfully marked as featured.', {
+            this.notificationsService.show('Assessment Successfully Marked As Featured.', {
                 status: TuiNotification.Success,
             }).subscribe()
         })
@@ -110,7 +110,7 @@ export class CourseEventsSnippetComponent implements OnInit {
         })
         this.dialogService.open(
             this.importDialog,
-            {label: 'Select an Event to Import', size: 'l', closeable: false}
+            {label: 'Select an Assessment to Import', size: 'l', closeable: false}
         ).subscribe()
     }
 
@@ -123,7 +123,7 @@ export class CourseEventsSnippetComponent implements OnInit {
         this.courseEventService.importCourseEvent(event, courseId).subscribe((response) => {
             if (response.status === 201) {
                 this.notificationsService
-                    .show('The event has been imported successfully.', {
+                    .show('The Assessment Has Been Imported Successfully.', {
                         status: TuiNotification.Success
                     }).subscribe()
             }

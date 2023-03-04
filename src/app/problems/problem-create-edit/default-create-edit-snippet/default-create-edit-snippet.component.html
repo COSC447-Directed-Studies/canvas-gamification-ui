@@ -68,7 +68,7 @@
                     [valueContent]="events ? (events | stringifyTuiDataList: 'id': 'name') : ''"
                     formControlName="event"
                 >
-                    Event
+                    Assessment
                     <tui-data-list *tuiDataList>
                         <button *ngFor="let event of events" [value]="event.id" tuiOption>
                             {{ event.name }}

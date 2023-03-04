@@ -23,7 +23,7 @@ export class CourseEventService {
             .get<CourseEvent>(url)
             .pipe(catchError(
                 this.apiService.handleError<CourseEvent>(
-                    `Error occurred while fetching Course Event`
+                    `Error occurred while fetching Course Assessment`
                 )
             ))
     }
@@ -34,7 +34,7 @@ export class CourseEventService {
             .delete<CourseEvent>(url)
             .pipe(catchError(
                 this.apiService.handleError<CourseEvent>(
-                    `Error occurred while deleting Course Event`
+                    `Error occurred while deleting Course Assessment`
                 )
             ))
     }
@@ -44,7 +44,7 @@ export class CourseEventService {
         return this.http
             .post<CourseEvent>(url, courseEvent)
             .pipe(catchError(
-                this.apiService.handleError<CourseEvent>(`Error occurred while adding Course Event`)
+                this.apiService.handleError<CourseEvent>(`Error occurred while adding Course Assignment`)
             ))
     }
 
@@ -53,7 +53,7 @@ export class CourseEventService {
         return this.http.put<CourseEvent>(url, courseEvent)
             .pipe(catchError(
                 this.apiService.handleError<CourseEvent>(
-                    `Error occurred while updating Course Event`
+                    `Error occurred while updating Course Assessment`
                 )
             ))
     }
