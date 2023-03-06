@@ -56,7 +56,7 @@ export class EventRowComponent implements OnInit {
         if(openDialog) {
             this.dialogService.open(content, {
                 closeable: false,
-                label: 'Edit Finished Assessment?'
+                label: 'Edit finished assessment?'
             }).subscribe()
         } else{
             this.router.navigate(['/course', this.event.course, 'assignments-exams', this.event.id, 'edit']).then()

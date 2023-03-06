@@ -32,7 +32,7 @@ export interface EventQuestionSetFormData {
 
 export class CourseEventForm {
     /**
-     * Creates a FormGroup for a Course Assessment.
+     * Creates a FormGroup for a CourseEvent.
      */
     static createForm(): FormGroup {
         const builder = new FormBuilder()
@@ -53,7 +53,7 @@ export class CourseEventForm {
     }
 
     /**
-     * Creates a FormGroup for a Course Assessment with existing data.
+     * Creates a FormGroup for a CourseEvent with existing data.
      * @param event - The event.
      */
     static createFormWithData(event: CourseEvent): FormGroup {

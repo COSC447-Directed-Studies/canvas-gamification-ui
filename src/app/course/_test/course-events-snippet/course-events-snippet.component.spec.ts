@@ -78,7 +78,7 @@ describe('CourseEventsSnippetComponent', () => {
         expect(component.courseEvents).toEqual([MOCK_COURSE_EVENT])
         expect(dialogService.open).toHaveBeenCalledOnceWith(
             component.importDialog,
-            {label: 'Select an Assessment to Import', size: 'l', closeable: false}
+            {label: 'Select an assessment to import', size: 'l', closeable: false}
         )
     })
 
