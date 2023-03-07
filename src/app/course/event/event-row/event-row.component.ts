@@ -70,7 +70,7 @@ export class EventRowComponent implements OnInit {
         this.courseEventService.deleteCourseEvent(eventId).subscribe()
 
         this.notificationsService
-            .show('The event has been deleted successfully.', {
+            .show('The assessment has been deleted successfully.', {
                 status: TuiNotification.Success
             }).subscribe()
         this.router.navigateByUrl('/RefreshComponent', {skipLocationChange: true}).then(() => {
@@ -89,7 +89,7 @@ export class EventRowComponent implements OnInit {
     ): void {
         this.dialogService.open(content, {
             closeable: false,
-            label: 'Delete Event?'
+            label: 'Delete Assessment?'
         }).subscribe(() => this.deleteEvent(eventId))
     }
 }

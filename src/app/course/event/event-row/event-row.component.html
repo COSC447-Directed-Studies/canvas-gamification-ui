@@ -96,7 +96,7 @@
             Edit
         </ng-template>
         <ng-template #editEvent let-observer>
-            <p>This event has finished. Are you sure that you would like to edit this event?</p>
+            <p>This assessment has finished. Are you sure that you would like to edit this assessment?</p>
             <div class="tui-form__buttons">
                 <button
                     (click)="observer.complete()"
@@ -169,7 +169,7 @@
 </div>
 
 <ng-template #deleteDialog let-observer>
-    <p>Are you sure that you would like to delete this event?</p>
+    <p>Are you sure that you would like to delete this assessment?</p>
     <div class="tui-form__buttons">
         <button
             (click)="observer.next(); observer.complete()"
