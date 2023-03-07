@@ -1,6 +1,6 @@
 import {
     AbstractControl,
-    AbstractControlOptions,
+    AbstractControlOptions, FormArray,
     FormBuilder,
     FormControl,
     FormGroup,
@@ -32,7 +32,7 @@ export interface EventQuestionSetFormData {
 
 export class CourseEventForm {
     /**
-     * Creates a FormGroup for a Course Event.
+     * Creates a FormGroup for a CourseEvent.
      */
     static createForm(): FormGroup {
         const builder = new FormBuilder()
@@ -46,14 +46,14 @@ export class CourseEventForm {
             ),
             startTimePicker: new FormControl(TuiTime.currentLocal(), [Validators.required]),
             endTimePicker: new FormControl(TuiTime.currentLocal(), [Validators.required]),
-            // questionSets: new FormArray(
-            //     [CourseEventForm.createQuestionSetForm()]
-            // )
+            questionSets: new FormArray(
+                [CourseEventForm.createQuestionSetForm()]
+            )
         }, {validator: CourseEventForm.dateValidator} as AbstractControlOptions)
     }
 
     /**
-     * Creates a FormGroup for a Course Event with existing data.
+     * Creates a FormGroup for a CourseEvent with existing data.
      * @param event - The event.
      */
     static createFormWithData(event: CourseEvent): FormGroup {
@@ -79,9 +79,9 @@ export class CourseEventForm {
                 TuiTime.fromLocalNativeDate(new Date(event.end_date)),
                 [Validators.required]
             ),
-            // questionSets: new FormArray(
-            //     [CourseEventForm.createQuestionSetForm()]
-            // )
+            questionSets: new FormArray(
+                [CourseEventForm.createQuestionSetForm()]
+            )
         }, {validator: CourseEventForm.dateValidator} as AbstractControlOptions)
     }
 
@@ -110,20 +110,20 @@ export class CourseEventForm {
         }
     }
 
-    // static createQuestionSetForm(): FormGroup {
-    //     const builder = new FormBuilder()
-    //     return builder.group({
-    //         category: new FormControl('', [Validators.required]),
-    //         difficulty: new FormControl('', [Validators.required]),
-    //         number_of_questions: new FormControl('', [Validators.required])
-    //     })
-    // }
+    static createQuestionSetForm(): FormGroup {
+        const builder = new FormBuilder()
+        return builder.group({
+            category: new FormControl('', [Validators.required]),
+            difficulty: new FormControl('', [Validators.required]),
+            number_of_questions: new FormControl('', [Validators.required])
+        })
+    }
 
-    // static formatQuestionSetFormData(
-    //     formControl: FormControl,
-    // ): EventQuestionSetFormData {
-    //     return formControl.value
-    // }
+    static formatQuestionSetFormData(
+        formControl: FormControl,
+    ): EventQuestionSetFormData {
+        return formControl.value
+    }
 
     /**
      * Converts TuiDay and TuiTime to native Date object

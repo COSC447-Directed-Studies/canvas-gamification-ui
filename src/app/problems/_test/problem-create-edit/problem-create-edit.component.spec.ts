@@ -11,6 +11,7 @@ import {
 import {
     McqCreateEditSnippetComponent
 } from "@app/problems/problem-create-edit/mcq-create-edit-snippet/mcq-create-edit-snippet.component"
+import {ActivatedRoute} from "@angular/router"
 
 describe('ProblemCreateEditComponent', () => {
     let component: ProblemCreateEditComponent
@@ -22,7 +23,21 @@ describe('ProblemCreateEditComponent', () => {
                 ProblemCreateEditComponent, JavaCreateEditSnippetComponent,
                 ParsonsCreateEditSnippetComponent, McqCreateEditSnippetComponent
             ],
-            imports: [TestModule]
+            imports: [TestModule],
+            providers: [
+                {
+                    provide: ActivatedRoute, useValue: {
+                        snapshot: {
+                            params: {
+                                type: 'MCQ',
+                            },
+                            parent: {
+                                params: {},
+                            }
+                        }
+                    }
+                }
+            ]
         }).compileComponents()
     })
 

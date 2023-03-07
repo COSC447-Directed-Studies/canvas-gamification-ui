@@ -14,7 +14,7 @@ import {TuiIslandModule, TuiSelectModule} from "@taiga-ui/kit"
 import {FormsModule, ReactiveFormsModule} from "@angular/forms"
 import {ActivatedRoute, convertToParamMap} from "@angular/router"
 import {CourseService} from "@app/course/_services/course.service"
-import {CourseServiceMock} from "@test/course.service.mock"
+import {CourseServiceMock} from "@test/_services/course.service.mock"
 
 describe('CourseEventsSnippetComponent', () => {
     let component: CourseEventsSnippetComponent
@@ -78,7 +78,7 @@ describe('CourseEventsSnippetComponent', () => {
         expect(component.courseEvents).toEqual([MOCK_COURSE_EVENT])
         expect(dialogService.open).toHaveBeenCalledOnceWith(
             component.importDialog,
-            {label: 'Select an Event to Import', size: 'l', closeable: false}
+            {label: 'Which assessment do you want to import?', size: 'l', closeable: false}
         )
     })
 

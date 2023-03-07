@@ -3,11 +3,8 @@ import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing'
 import {ConceptMapComponent} from '../../concept-map/concept-map.component'
 import {TestModule} from '@test/test.module'
 import {CategoryService} from "@app/_services/api/category.service"
-import {CategoryServiceMock} from "@test/category.service.mock"
+import {CategoryServiceMock} from "@test/_services/category.service.mock"
 import {MOCK_CATEGORIES} from "@app/problems/_test/mock"
-import {
-    UserStatsComponent
-} from "@app/components/user-stats/user-stats.component"
 import {TuiDialogService} from "@taiga-ui/core"
 import {of} from "rxjs"
 import {By} from "@angular/platform-browser"
@@ -20,7 +17,7 @@ describe('ConceptMapComponent', () => {
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
             imports: [TestModule],
-            declarations: [ConceptMapComponent, UserStatsComponent],
+            declarations: [ConceptMapComponent],
             providers: [
                 {provide: CategoryService, useClass: CategoryServiceMock}
             ]
