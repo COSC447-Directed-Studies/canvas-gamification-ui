@@ -45,6 +45,8 @@
                     <button
                         tuiButton
                         [iconRight]="newQuestionDropdownIcon"
+                        (click)="openNewQuestionDropdownDialog(openDropDown, event.is_closed && !event.is_not_available_yet)"
+                        id="dropDownButton"
                         icon="tuiIconPlus"
                         size="s"
                         type="button"
@@ -75,6 +77,28 @@
                             Parsons Question
                         </a>
                     </tui-data-list>
+                </ng-template>
+                <ng-template #openDropDown let-observer>
+                    <p>This assessment has finished. Are you sure that you would like to create a new question?</p>
+                    <div class="tui-form__buttons">
+                        <button
+                            (click)="observer.complete(); dontOpenModal=true; openTheDropDown()"
+                            class="tui-form__button"
+                            size="m"
+                            tuiButton
+                        >
+                            Continue
+                        </button>
+                        <button
+                            (click)="observer.complete()"
+                            appearance="secondary"
+                            class="tui-form__button"
+                            size="m"
+                            tuiButton
+                        >
+                            Cancel
+                        </button>
+                    </div>
                 </ng-template>
             </div>
         </div>

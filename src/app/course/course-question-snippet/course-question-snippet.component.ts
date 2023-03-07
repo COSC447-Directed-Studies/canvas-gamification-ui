@@ -32,6 +32,7 @@ export class CourseQuestionSnippetComponent implements OnInit {
     courseId: number
     team: Team
     openNewQuestionDropdown = false
+    dontOpenModal = false
 
     constructor(
         private authenticationService: AuthenticationService,
@@ -174,4 +175,27 @@ export class CourseQuestionSnippetComponent implements OnInit {
             ).then()
         }
     }
+
+    /**
+     * Opens the dialog service based on the template passed
+     * @param content - the template to be used
+     * @param openDialog - the boolean condition used to check if template should be opened
+     */
+    openNewQuestionDropdownDialog(
+        content: PolymorpheusContent<TuiDialogContext>,
+        openDialog: boolean
+    ): void {
+        if(openDialog && !this.dontOpenModal) {
+            this.dialogService.open(content, {
+                closeable: false,
+                label: 'Create New Question in Finished Assessment?'
+            }).subscribe()
+        }
+    }
+
+    openTheDropDown(): void {
+        document.getElementById('dropDownButton').click()
+    }
 }
+//on click, open the thing to open the modal and in method that opens the modal set it to false isntantly
+//and then on clicking yes set it to open
