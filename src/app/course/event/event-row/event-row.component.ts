@@ -71,9 +71,7 @@ export class EventRowComponent implements OnInit {
         this.dialogService.open(content, {
             closeable: false,
             label: 'Delete Event?'
-        }).subscribe({
-            next: () => this.deleteEvent(eventId)
-        })
+        }).subscribe(() => this.deleteEvent(eventId))
     }
 
 }
