@@ -3,7 +3,7 @@
     [tuiDialogOptions]="$any({ label: 'Add this question to an event', size: 'm' })"
     [tuiDialog]="open"
 >
-    <h2 class="tui-form__header">Open Events</h2>
+    <h2 class="tui-form__header">Open Assessments</h2>
     <ng-container *ngIf="openEvents">
         <div class="tui-space_top-8 space-y-3">
             <tui-island *ngFor="let event of openEvents" size="s">
@@ -25,7 +25,7 @@
             </tui-island>
         </div>
     </ng-container>
-    <h2 class="tui-form__header">Closed Events</h2>
+    <h2 class="tui-form__header">Closed Assessments</h2>
     <ng-container *ngIf="closedEvents">
         <div class="tui-space_top-8 space-y-3">
             <tui-island *ngFor="let event of closedEvents" size="s" class="closed">
