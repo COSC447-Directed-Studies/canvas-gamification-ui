@@ -3,9 +3,32 @@
     [tuiDialogOptions]="$any({ label: 'Add this question to an event', size: 'm' })"
     [tuiDialog]="open"
 >
-    <ng-container *ngIf="events">
+    <h2>Open Events</h2>
+    <ng-container *ngIf="openEvents">
         <div class="tui-space_top-8 space-y-3">
-            <tui-island *ngFor="let event of events" size="s">
+            <tui-island *ngFor="let event of openEvents" size="s">
+                <div class="flex">
+                    <div class="flex-grow">
+                        <p class="tui-island__category">{{ event.type }}</p>
+                        <h3 class="tui-island__title">{{ event.name }}</h3>
+                    </div>
+                    <button
+                        (click)="addToEvent(event)"
+                        appearance="secondary"
+                        aria-label="Add"
+                        size="s"
+                        tuiButton
+                    >
+                        Add
+                    </button>
+                </div>
+            </tui-island>
+        </div>
+    </ng-container>
+    <h2>Closed Events</h2>
+    <ng-container *ngIf="closedEvents">
+        <div class="tui-space_top-8 space-y-3">
+            <tui-island *ngFor="let event of closedEvents" size="s">
                 <div class="flex">
                     <div class="flex-grow">
                         <p class="tui-island__category">{{ event.type }}</p>
