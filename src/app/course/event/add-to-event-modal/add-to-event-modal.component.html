@@ -12,15 +12,17 @@
                         <p class="tui-island__category">{{ event.type }}</p>
                         <h3 class="tui-island__title">{{ event.name }}</h3>
                     </div>
-                    <button
-                        (click)="addToEvent(event)"
-                        appearance="secondary"
-                        aria-label="Add"
-                        size="s"
-                        tuiButton
-                    >
-                        Add
-                    </button>
+                    <div class="flex items-center">
+                        <button
+                            (click)="addToEvent(event)"
+                            appearance="secondary"
+                            aria-label="Add"
+                            size="s"
+                            tuiButton
+                        >
+                            Add
+                        </button>
+                    </div>
                 </div>
             </tui-island>
         </div>
@@ -28,21 +30,29 @@
     <h2 class="tui-form__header">Closed Assessments</h2>
     <ng-container *ngIf="closedEvents">
         <div class="tui-space_top-8 space-y-3">
-            <tui-island *ngFor="let event of closedEvents" size="s" class="closed">
+            <tui-island *ngFor="let event of closedEvents" size="s">
                 <div class="flex">
                     <div class="flex-grow">
                         <p class="tui-island__category">{{ event.type }}</p>
                         <h3 class="tui-island__title">{{ event.name }}</h3>
                     </div>
-                    <button
-                        (click)="addToEvent(event)"
-                        appearance="outline"
-                        aria-label="Add"
-                        size="s"
-                        tuiButton
-                    >
-                        Add
-                    </button>
+                    <div class="space-x-4 flex items-center">
+                        <tui-tag
+                            size="m"
+                            status="default"
+                            value="Closed"
+                        >
+                        </tui-tag>
+                        <button
+                            (click)="addToEvent(event)"
+                            appearance="secondary"
+                            aria-label="Add"
+                            size="s"
+                            tuiButton
+                        >
+                            Add
+                        </button>
+                    </div>
                 </div>
             </tui-island>
         </div>
