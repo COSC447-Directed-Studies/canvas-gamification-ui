@@ -178,16 +178,17 @@ export class CourseQuestionSnippetComponent implements OnInit {
     /**
      * Opens the dialog service based on the template passed
      * @param content - the template to be used
-     * @param finished - the boolean used to alter label text
-     * @param labelText - the string used to alternate label text
+     * @param eventRemove - the event to be removed
      */
     openRemoveQuestionInEventDialog(
         content: PolymorpheusContent<TuiDialogContext>,
-        finished: boolean,
-        labelText: string
+        eventRemove: CourseEvent
     ): void {
-        if(finished) {
+        let labelText
+        if (eventRemove.is_closed && !eventRemove.is_not_available_yet) {
             labelText = 'Remove question in finished assessment?'
+        } else {
+            labelText = 'Remove question?'
         }
         this.dialogService.open(content, {
             closeable: false,

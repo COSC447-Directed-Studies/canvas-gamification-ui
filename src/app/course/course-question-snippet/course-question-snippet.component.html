@@ -202,7 +202,7 @@
                         </ng-template>
                         <a
                             *ngIf="event.has_edit_permission"
-                            (click)="openRemoveQuestionInEventDialog(removeEventQuestion, event.is_closed && !event.is_not_available_yet, 'Remove question')"
+                            (click)="openRemoveQuestionInEventDialog(removeEventQuestion, event)"
                             appearance="accent"
                             class="tui-form__button"
                             size="s"
