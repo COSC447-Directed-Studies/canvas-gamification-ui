@@ -27,6 +27,7 @@ export class SubmissionSnippetComponent implements OnChanges, OnInit {
     @Input() questionId: number
     @Output() readonly reloadRequestSubscriberEvent = new EventEmitter<Subscriber<never>>()
 
+    ///these
     reloadRequestObservable: Observable<never>
     reloadRequestSubscriber: Subscriber<never>
 
@@ -40,6 +41,7 @@ export class SubmissionSnippetComponent implements OnChanges, OnInit {
     ) {
     }
 
+    //this
     ngOnInit(): void {
         this.reloadRequestObservable = new Observable<never>(
             subscriber => this.reloadRequestSubscriber = subscriber
@@ -52,6 +54,7 @@ export class SubmissionSnippetComponent implements OnChanges, OnInit {
         this.reloadSubmissions()
     }
 
+    //this
     reloadSubmissions(): void {
         this.submissionService.getPreviousSubmissions(
             this.questionId,
