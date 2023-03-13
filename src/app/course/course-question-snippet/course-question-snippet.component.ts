@@ -176,23 +176,6 @@ export class CourseQuestionSnippetComponent implements OnInit {
         }
     }
 
-    // /**
-    //  * Opens the dialog service based on the template passed
-    //  * @param content - the template to be used
-    //  * @param openDialog - the boolean condition used to check if template should be opened
-    //  */
-    // openNewQuestionDropdownDialog(
-    //     content: PolymorpheusContent<TuiDialogContext>,
-    //     openDialog: boolean
-    // ): void {
-    //     if(openDialog && !this.dontOpenModal) {
-    //         this.dialogService.open(content, {
-    //             closeable: false,
-    //             label: 'Create New Question in Finished Assessment?'
-    //         }).subscribe()
-    //     }
-    // }
-
     /**
      * Opens the dialog service based on the template passed
      * @param content - the template to be used
