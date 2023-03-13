@@ -32,7 +32,7 @@ export class CourseQuestionSnippetComponent implements OnInit {
     courseId: number
     team: Team
     openNewQuestionDropdown = false
-    dontOpenModal = false
+    dropdownLink: string
 
     constructor(
         private authenticationService: AuthenticationService,
@@ -176,26 +176,45 @@ export class CourseQuestionSnippetComponent implements OnInit {
         }
     }
 
+    // /**
+    //  * Opens the dialog service based on the template passed
+    //  * @param content - the template to be used
+    //  * @param openDialog - the boolean condition used to check if template should be opened
+    //  */
+    // openNewQuestionDropdownDialog(
+    //     content: PolymorpheusContent<TuiDialogContext>,
+    //     openDialog: boolean
+    // ): void {
+    //     if(openDialog && !this.dontOpenModal) {
+    //         this.dialogService.open(content, {
+    //             closeable: false,
+    //             label: 'Create New Question in Finished Assessment?'
+    //         }).subscribe()
+    //     }
+    // }
+
     /**
      * Opens the dialog service based on the template passed
      * @param content - the template to be used
      * @param openDialog - the boolean condition used to check if template should be opened
+     * @param link - the ending parameter of the routerlink
      */
-    openNewQuestionDropdownDialog(
+    openNewQuestionInClosedEventDialog(
         content: PolymorpheusContent<TuiDialogContext>,
-        openDialog: boolean
+        openDialog: boolean,
+        link: string
     ): void {
-        if(openDialog && !this.dontOpenModal) {
+        if (openDialog) {
+            this.dropdownLink = link
             this.dialogService.open(content, {
                 closeable: false,
-                label: 'Create New Question in Finished Assessment?'
+                label: 'Create new question in finished assessment?'
             }).subscribe()
+        } else {
+            this.router.navigate(
+                ['../' , this.eventId, 'problem', 'create', link]
+                ,{relativeTo: this.route}
+            ).then()
         }
     }
-
-    openTheDropDown(): void {
-        document.getElementById('dropDownButton').click()
-    }
 }
-//on click, open the thing to open the modal and in method that opens the modal set it to false isntantly
-//and then on clicking yes set it to open
