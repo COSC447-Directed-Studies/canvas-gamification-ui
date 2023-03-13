@@ -184,11 +184,9 @@ export class CourseQuestionSnippetComponent implements OnInit {
         content: PolymorpheusContent<TuiDialogContext>,
         eventRemove: CourseEvent
     ): void {
-        let labelText
-        if (eventRemove.is_closed && !eventRemove.is_not_available_yet) {
+        let labelText = 'Remove question?'
+        if (eventRemove.is_closed) {
             labelText = 'Remove question in finished assessment?'
-        } else {
-            labelText = 'Remove question?'
         }
         this.dialogService.open(content, {
             closeable: false,
