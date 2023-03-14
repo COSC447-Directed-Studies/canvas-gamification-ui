@@ -54,7 +54,6 @@ export class SubmissionSnippetComponent implements OnChanges, OnInit {
         this.reloadSubmissions()
     }
 
-    //this
     reloadSubmissions(): void {
         this.submissionService.getPreviousSubmissions(
             this.questionId,

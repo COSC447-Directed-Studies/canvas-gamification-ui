@@ -66,30 +66,25 @@ export class EventRowComponent implements OnInit {
     /**
      * Delete an event from the course-list.
      */
-    async deleteEvent(eventId: number) {
-        this.courseEventService.deleteCourseEvent(eventId).subscribe()
-
-        this.notificationsService
-            .show('The assessment has been deleted successfully.', {
-                status: TuiNotification.Success
+    deleteEvent() {
+        return this.courseEventService.deleteCourseEvent(this.event.id).subscribe(() => {
+            this.notificationsService.show('Assessment successfully deleted.', {
+                status: TuiNotification.Success,
             }).subscribe()
-        this.router.navigateByUrl('/RefreshComponent', {skipLocationChange: true}).then(() => {
-            this.router.navigate(['course', this.event.course, 'assignments-exams'])
+            this.reload.emit(true)
         })
     }
 
     /**
      * Dialog for confirming if you want to delete a question.
      * @param content - The modal to open.
-     * @param eventId - The event to delete.
      */
     openDeleteEventDialog(
-        content: PolymorpheusContent<TuiDialogContext>,
-        eventId: number
+        content: PolymorpheusContent<TuiDialogContext>
     ): void {
         this.dialogService.open(content, {
             closeable: false,
             label: 'Delete Assessment?'
-        }).subscribe(() => this.deleteEvent(eventId))
+        }).subscribe(() => this.deleteEvent())
     }
 }

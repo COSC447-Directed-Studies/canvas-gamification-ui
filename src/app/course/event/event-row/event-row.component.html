@@ -119,9 +119,9 @@
             </div>
         </ng-template>
         <button *ngIf="event.has_edit_permission"
-                (click)="openDeleteEventDialog(deleteDialog, event.id)"
+                (click)="openDeleteEventDialog(deleteDialog)"
                 [tuiHint]="deleteTooltip"
-                class="tui-space_right-2 tui-space_vertical-2"
+                class="mr-2"
                 icon="tuiIconTrash"
                 size="s"
                 tuiDescribedBy="delete-{{event.name}}"
@@ -177,7 +177,7 @@
             size="m"
             tuiButton
         >
-            Confirm Changes
+            Confirm Delete
         </button>
         <button
             (click)="observer.complete()"

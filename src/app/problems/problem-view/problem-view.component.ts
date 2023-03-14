@@ -48,7 +48,6 @@ export class ProblemViewComponent implements OnInit, OnChanges, OnDestroy {
         this.subscriptions.unsubscribe()
     }
 
-    ///this, but its' reverse so parent making child reload I need child make parent reload
     /**
      * Updates the submissions for a question following a successful submission.
      * @param newSubmission A boolean that describes if a question has been successfully submitted.
