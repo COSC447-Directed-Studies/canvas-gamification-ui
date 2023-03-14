@@ -48,7 +48,6 @@ export class ParsonsViewSnippetComponent implements OnChanges {
                 .show('The question has been submitted successfully.', {
                     status: TuiNotification.Success
                 }).subscribe()
-            //emits something parent will recieve in observable using eventemitter
             this.successfulSubmissionEvent.emit(true)
             this.waitingSubmission = false
         }, () => {
