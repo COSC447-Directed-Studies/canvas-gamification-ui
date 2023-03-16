@@ -11,6 +11,7 @@ export class ProblemSetForm {
             difficulty: new FormControl(null),
             parentCategory: new FormControl(null),
             subCategory: new FormControl(null),
+            questionType: new FormControl(null),
             is_sample: new FormControl(null),
         })
     }

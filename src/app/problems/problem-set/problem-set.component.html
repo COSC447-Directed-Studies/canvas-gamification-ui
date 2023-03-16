@@ -49,16 +49,14 @@
         </tui-input>
         <tui-select
             [tuiTextfieldCleaner]="true"
-            [valueContent]="typeNames ? (typeNames | stringifyTuiDataList: 0: 1) : ''"
             class="tui-space_left-4"
-            formControlName="question type"
+            formControlName="questionType"
         >
             Question Type
-            <tui-data-list *tuiDataList>
-                <button *ngFor="let q of typeNames" [value]="q" tuiOption>
-                    {{ q }}
-                </button>
-            </tui-data-list>
+            <tui-data-list-wrapper
+                *tuiDataList
+                [items]="typeNames"
+            ></tui-data-list-wrapper>
         </tui-select>
         <tui-select
             [tuiTextfieldCleaner]="true"

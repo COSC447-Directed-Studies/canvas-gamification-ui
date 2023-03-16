@@ -120,7 +120,7 @@ export class ProblemSetComponent implements OnInit, AfterContentChecked {
         this.difficultyService.getDifficulties().subscribe((difficulties) => {
             this.difficulties = difficulties
         })
-        this.typeNames = ["Multiple Choice", "Java", "Parsons"]
+        this.typeNames = ["Multiple Choice Question", "Java Question", "Parsons Question"]
         this.form['parentCategory'].valueChanges.subscribe((value) => {
             const parentCategoryPK = this.categories?.filter(c => c.name === value)[0].pk
             this.subCategories = this.categories?.filter(c => c.parent === parentCategoryPK)
@@ -184,6 +184,7 @@ export class ProblemSetComponent implements OnInit, AfterContentChecked {
         parentCategory: string,
         subCategory: string,
         difficulty: string,
+        questionType: string,
         is_sample: string
         } {
         const formValues = this.formGroup.value
