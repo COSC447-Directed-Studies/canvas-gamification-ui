@@ -25,6 +25,7 @@ export type SortingKey =
     | 'parent_category_name'
     | 'category_name'
     | 'difficulty'
+    | 'type_name'
     | 'status'
 
 @Component({
@@ -50,6 +51,7 @@ export class ProblemSetComponent implements OnInit, AfterContentChecked {
         parent_category_name: () => 0,
         category_name: () => 0,
         difficulty: () => 0,
+        type_name: () => 0,
         status: () => 0,
     }
     sorter = this.sorters.id
@@ -71,6 +73,7 @@ export class ProblemSetComponent implements OnInit, AfterContentChecked {
         parent_category_name: 'category__parent__name',
         category_name: 'category__name',
         difficulty: 'difficulty',
+        type_name: 'type__name',
         status: 'is_verified'
     }
     categories: Category[]
