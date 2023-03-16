@@ -48,7 +48,7 @@ import {
     TuiAccordionModule,
     TuiBadgeModule,
     TuiCheckboxBlockModule,
-    TuiCheckboxLabeledModule,
+    TuiCheckboxLabeledModule, TuiDataListWrapperModule,
     TuiFieldErrorModule,
     TuiInputCountModule,
     TuiInputModule,
@@ -125,6 +125,7 @@ import {ProblemReportModalComponent} from './problem-report/problem-report-modal
         TuiCheckboxBlockModule,
         TuiCheckboxLabeledModule,
         TuiDataListModule,
+        TuiDataListWrapperModule,
         TuiDescribedByModule,
         TuiDialogModule,
         TuiDropdownControllerModule,
@@ -149,7 +150,7 @@ import {ProblemReportModalComponent} from './problem-report/problem-report-modal
         TuiTabsModule,
         TuiTagModule,
         TuiTextAreaModule,
-        TuiTextfieldControllerModule
+        TuiTextfieldControllerModule,
     ],
     exports: [
         ProblemReportModalComponent,

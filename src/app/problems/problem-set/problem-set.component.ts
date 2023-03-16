@@ -80,6 +80,7 @@ export class ProblemSetComponent implements OnInit, AfterContentChecked {
     parentCategories: Category[]
     subCategories: Category[]
     difficulties: Difficulty[]
+    typeNames: string[]
 
     constructor(
         private builder: FormBuilder,
@@ -119,6 +120,7 @@ export class ProblemSetComponent implements OnInit, AfterContentChecked {
         this.difficultyService.getDifficulties().subscribe((difficulties) => {
             this.difficulties = difficulties
         })
+        this.typeNames = ["Multiple Choice", "Java", "Parsons"]
         this.form['parentCategory'].valueChanges.subscribe((value) => {
             const parentCategoryPK = this.categories?.filter(c => c.name === value)[0].pk
             this.subCategories = this.categories?.filter(c => c.parent === parentCategoryPK)
@@ -136,7 +138,7 @@ export class ProblemSetComponent implements OnInit, AfterContentChecked {
     update(values?: {
         page?: number,
         pageSize?: number,
-        sortDirection?: -1|1,
+        sortDirection?: -1 | 1,
         sorter?: TuiComparator<Question>,
     }): void {
         const {page, pageSize, sortDirection, sorter} = values ?? {}
