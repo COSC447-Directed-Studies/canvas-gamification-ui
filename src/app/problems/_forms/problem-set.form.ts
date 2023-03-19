@@ -32,6 +32,7 @@ export interface ProblemSetFormData {
     parentCategory: string,
     subCategory: string,
     difficulty: string,
+    type_name: string,
     is_sample: string,
     ordering: string,
 }

@@ -31,6 +31,7 @@ export class QuestionService {
             parentCategory = '',
             subCategory = '',
             difficulty = '',
+            type_name: questionType = '',
             is_sample: isSample = '',
             ordering = '',
         } = options ? options : {}
@@ -41,6 +42,7 @@ export class QuestionService {
             .set('category__parent__name', parentCategory)
             .set('category__name', subCategory)
             .set('difficulty', difficulty)
+            .set('question__type', questionType)
             .set('is_sample', isSample)
             .set('ordering', ordering)
 
