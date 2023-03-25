@@ -54,13 +54,10 @@
     }
 
     &-toggle {
-        position: sticky;
-        bottom: 0;
-        left: 0;
-        margin-top: auto;
-        border-top: 1px solid var(--tui-base-03);
+        //position: sticky;
         background-color: var(--tui-base-01);
         display: flex;
+        align-items: center;
 
         @include screen-sm() {
             display: none;
@@ -68,11 +65,29 @@
 
         &_left {
             justify-content: flex-end;
+            margin-right: 0.5rem;
+            margin-left: -1rem;
+        }
+
+        &_right {
+            justify-content: flex-end;
+            margin-right: -0.5rem;
+            margin-left: 0.75rem;
         }
 
         &_closed {
             justify-content: center;
             align-items: center;
+
+            &_left {
+                margin-left: 1rem;
+                margin-right: 0;
+            }
+
+            &_right {
+                margin-right: 0;
+                margin-left: 1rem;
+            }
         }
 
         &_button {
