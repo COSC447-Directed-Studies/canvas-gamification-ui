@@ -10,7 +10,6 @@
         <div
             *ngIf="toggleable && position === 'right'"
             [class.sidebar-toggle_right]="position === 'right'"
-            [class.sidebar-toggle_closed]="!sidebarOpen"
             [class.sidebar-toggle_closed_right]="!sidebarOpen"
             class="sidebar-toggle_right"
         >
@@ -54,7 +53,6 @@
         <div
             *ngIf="toggleable && position === 'left'"
             [class.sidebar-toggle_left]="position === 'left'"
-            [class.sidebar-toggle_closed]="!sidebarOpen"
             [class.sidebar-toggle_closed_left]="!sidebarOpen"
             class="sidebar-toggle"
         >
