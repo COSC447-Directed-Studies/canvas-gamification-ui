@@ -52,13 +52,16 @@
 </ng-container>
 
 <ng-template #skeletonTemplate>
-    <tui-accordion class="w-[60rem]">
-        <tui-accordion-item class="container" open="false" [disableHover]="true">
-            <div class="flex flex-wrap gap-3">
-                <div class="w-[20rem] type flex items-center tui-skeleton">
-                    Category
+    <tui-accordion>
+        <tui-accordion-item class="title" open="false" [disableHover]="true">
+            <div class="flex flex-wrap gap-3 justify-between">
+                <div class="min-w-[20rem] flex items-center tui-skeleton">
+                    <p>Category</p>
                 </div>
-                <div class="w-[15rem] flex items-center">
+                <div class="min-w-[5rem] flex items-center tui-skeleton">
+                    <p>0 Questions</p>
+                </div>
+                <div class="min-w-[5rem] flex items-center float-right">
                     <button
                         class="tui-space_vertical-2 justify-center tui-skeleton"
                         size="m"
@@ -69,17 +72,17 @@
                         Practice
                     </button>
                 </div>
-                <div class="w-[10rem] type flex items-center tui-skeleton">
-                    0 Questions
-                </div>
             </div>
             <ng-template tuiAccordionItemContent>
                 <div class="event">
-                    <div class="flex flex-wrap gap-3">
-                        <div class="w-[20rem] type flex items-center tui-skeleton">
-                            Child category
+                    <div class="flex flex-wrap gap-3 justify-between">
+                        <div class="min-w-[20rem] flex items-center tui-skeleton">
+                            <p class="type">Child category</p>
                         </div>
-                        <div class="w-[15rem] flex items-center">
+                        <div class="min-w-[5rem] flex items-center tui-skeleton">
+                            <p class="type">0 Questions</p>
+                        </div>
+                        <div class="min-w-[5rem] flex items-center">
                             <button
                                 class="tui-space_vertical-2 justify-center tui-skeleton"
                                 size="m"
@@ -89,18 +92,18 @@
                             >
                                 Practice
                             </button>
-                        </div>
-                        <div class="w-[10rem] type flex items-center tui-skeleton">
-                            0 Questions
                         </div>
                     </div>
                 </div>
                 <div class="event">
-                    <div class="flex flex-wrap gap-3">
-                        <div class="w-[20rem] type flex items-center tui-skeleton">
-                            Child category
+                    <div class="flex flex-wrap gap-3 justify-between">
+                        <div class="min-w-[20rem] flex items-center tui-skeleton">
+                            <p class="type">Child category</p>
                         </div>
-                        <div class="w-[15rem] flex items-center">
+                        <div class="min-w-[5rem] flex items-center tui-skeleton">
+                            <p class="type">0 Questions</p>
+                        </div>
+                        <div class="min-w-[5rem] flex items-center">
                             <button
                                 class="tui-space_vertical-2 justify-center tui-skeleton"
                                 size="m"
@@ -110,18 +113,18 @@
                             >
                                 Practice
                             </button>
-                        </div>
-                        <div class="w-[10rem] type flex items-center tui-skeleton">
-                            0 Questions
                         </div>
                     </div>
                 </div>
                 <div class="event">
-                    <div class="flex flex-wrap gap-3">
-                        <div class="w-[20rem] type flex items-center tui-skeleton">
-                            Child category
+                    <div class="flex flex-wrap gap-3 justify-between">
+                        <div class="min-w-[20rem] flex items-center tui-skeleton">
+                            <p class="type">Child category</p>
                         </div>
-                        <div class="w-[15rem] flex items-center">
+                        <div class="min-w-[5rem] flex items-center tui-skeleton">
+                            <p class="type">0 Questions</p>
+                        </div>
+                        <div class="min-w-[5rem] flex items-center">
                             <button
                                 class="tui-space_vertical-2 justify-center tui-skeleton"
                                 size="m"
@@ -131,18 +134,18 @@
                             >
                                 Practice
                             </button>
-                        </div>
-                        <div class="w-[10rem] type flex items-center tui-skeleton">
-                            0 Questions
                         </div>
                     </div>
                 </div>
                 <div class="event">
-                    <div class="flex flex-wrap gap-3">
-                        <div class="w-[20rem] type flex items-center tui-skeleton">
-                            Child category
+                    <div class="flex flex-wrap gap-3 justify-between">
+                        <div class="min-w-[20rem] flex items-center tui-skeleton">
+                            <p class="type">Child category</p>
                         </div>
-                        <div class="w-[15rem] flex items-center">
+                        <div class="min-w-[5rem] flex items-center tui-skeleton">
+                            <p class="type">0 Questions</p>
+                        </div>
+                        <div class="min-w-[5rem] flex items-center">
                             <button
                                 class="tui-space_vertical-2 justify-center tui-skeleton"
                                 size="m"
@@ -152,18 +155,18 @@
                             >
                                 Practice
                             </button>
-                        </div>
-                        <div class="w-[10rem] type flex items-center tui-skeleton">
-                            0 Questions
                         </div>
                     </div>
                 </div>
                 <div class="event">
-                    <div class="flex flex-wrap gap-3">
-                        <div class="w-[20rem] type flex items-center tui-skeleton">
-                            Child category
+                    <div class="flex flex-wrap gap-3 justify-between">
+                        <div class="min-w-[20rem] flex items-center tui-skeleton">
+                            <p class="type">Child category</p>
                         </div>
-                        <div class="w-[15rem] flex items-center">
+                        <div class="min-w-[5rem] flex items-center tui-skeleton">
+                            <p class="type">0 Questions</p>
+                        </div>
+                        <div class="min-w-[5rem] flex items-center">
                             <button
                                 class="tui-space_vertical-2 justify-center tui-skeleton"
                                 size="m"
@@ -173,9 +176,6 @@
                             >
                                 Practice
                             </button>
-                        </div>
-                        <div class="w-[10rem] type flex items-center tui-skeleton">
-                            0 Questions
                         </div>
                     </div>
                 </div>
