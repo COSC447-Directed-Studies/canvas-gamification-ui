@@ -2,6 +2,7 @@
 
 .course-island {
     overflow: hidden;
+    height: calc(100% - 2rem);
 
     .course-background {
         width: calc(100% + 2 * var(--tui-padding-l));
@@ -13,5 +14,5 @@
 }
 
 .add-color {
-    background-color: rgba(218,179,249,0.5);
+    background-color: rgba(218, 179, 249, 0.5);
 }
