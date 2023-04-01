@@ -2,14 +2,14 @@
     color: var(--tui-text-02);
 }
 
-.event {
+.row {
     &:not(:last-child) {
         border-bottom: solid 1px var(--tui-base-03);
         margin: 0;
-        padding-bottom: 20px;
+        padding-bottom: 5px;
     }
 
     &:not(:first-child) {
-        padding-top: 20px;
+        padding-top: 5px;
     }
 }
