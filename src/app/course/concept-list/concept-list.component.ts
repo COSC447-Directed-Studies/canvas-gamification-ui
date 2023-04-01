@@ -18,7 +18,7 @@ export class ConceptListComponent implements OnInit {
     categories: Category[]
     nestedCategories: NestedCategories[]
     difficulties: Difficulty[]
-    tableColumns: ['name', 'practice', ...Array<string>] = ['name', 'practice']
+    tableColumns = ['name', 'practice']
 
     @Input() currCourse: Course
 

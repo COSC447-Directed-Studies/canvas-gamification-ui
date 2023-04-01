@@ -4,7 +4,7 @@
         [routerLink]="['..']"
         icon="tuiIconArrowLeft"
         size="s"
-        class="tui-space_right-3"
+        class="p-3"
         tuiButton
     >
         Back to Practice
@@ -15,17 +15,10 @@
             <tui-toggle
                 [(ngModel)]="enableListView"
                 size="m"
-                class="tui-space_left-2"
+                class="p-2"
             ></tui-toggle>
         </label>
     </div>
-    <div
-        *ngIf="enableListView; then listView; else mapView"
-    ></div>
-    <ng-template #listView>
-        <app-concept-list [currCourse]="course"></app-concept-list>
-    </ng-template>
-    <ng-template #mapView>
-        <app-concept-map [currCourse]="course"></app-concept-map>
-    </ng-template>
+    <app-concept-list *ngIf="enableListView" [currCourse]="course"></app-concept-list>
+    <app-concept-map *ngIf="!enableListView" [currCourse]="course"></app-concept-map>
 </section>
