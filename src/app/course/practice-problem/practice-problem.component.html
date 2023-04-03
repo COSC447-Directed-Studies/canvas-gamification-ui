@@ -171,7 +171,7 @@
                 tuiButton
                 appearance="secondary"
             >
-                Add This Question to Assessment
+                Add to Assessment
             </button>
             <button
                 (click)="openReportQuestion()"
@@ -220,6 +220,7 @@
 <app-add-to-event-modal
     [(open)]="addQuestionModal"
     [questionId]="currentQuestionId"
-    [events]="course?.events"
+    [openEvents]="course?.events"
+    [closedEvents]="course?.events"
 >
 </app-add-to-event-modal>
