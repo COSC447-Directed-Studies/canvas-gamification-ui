@@ -8,6 +8,7 @@ import {
 import {Difficulty} from "@app/_models/difficulty"
 import {DifficultyService} from "@app/problems/_services/difficulty.service"
 import {Router} from "@angular/router"
+import {ParentNodeService} from "@app/_services/parent-node-service"
 
 @Component({
     selector: 'app-concept-list',
@@ -25,6 +26,7 @@ export class ConceptListComponent implements OnInit {
     constructor(
         private categoryService: CategoryService,
         private difficultyService: DifficultyService,
+        private parentNodeService: ParentNodeService,
         private router: Router
     ) {
     }
@@ -58,5 +60,14 @@ export class ConceptListComponent implements OnInit {
             ['course', this.currCourse.id, 'practice', 'category', category.pk]
             , {queryParams: {difficulty: 'EASY'}}
         ).then()
+    }
+
+    setTopLevel(pk: number) {
+        this.parentNodeService.setParentNode(pk)
+        console.log("set top level to :" + pk)
+    }
+
+    getTopLevel(pk: number): boolean {
+        return this.parentNodeService.getParentNode() === pk
     }
 }
