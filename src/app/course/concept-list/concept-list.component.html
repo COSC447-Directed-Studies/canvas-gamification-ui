@@ -5,16 +5,16 @@
                             (close)="setTopLevel(null)" [open]="getTopLevel(category.category.pk)">
             <div class="flex flex-wrap gap-3 justify-between">
                 <div class="min-w-[20rem] flex items-center">
-                    <p>{{ category.category.name }}</p>
+                    {{ category.category.name }}
                 </div>
                 <div class="min-w-[5rem] flex items-center">
-                    <p>{{ category.category.question_count }} Questions</p>
+                    {{ category.category.question_count }} Questions
                 </div>
                 <div class="min-w-[5rem] flex items-center float-right">
                     <button
                         (click)="openPracticePage(category.category)"
                         class="tui-space_vertical-2 justify-center"
-                        size="m"
+                        size="s"
                         tuiButton
                         type="button"
                         appearance="flat"
@@ -37,7 +37,7 @@
                             <button
                                 (click)="openPracticePage(childCategory.category)"
                                 class="tui-space_vertical-2 justify-center"
-                                size="m"
+                                size="s"
                                 tuiButton
                                 type="button"
                                 appearance="flat"
