@@ -20,6 +20,7 @@ export class ConceptListComponent implements OnInit {
     nestedCategories: NestedCategories[]
     difficulties: Difficulty[]
     tableColumns = ['name', 'practice']
+    parentNode: number = null
 
     @Input() currCourse: Course
 
@@ -29,6 +30,7 @@ export class ConceptListComponent implements OnInit {
         private parentNodeService: ParentNodeService,
         private router: Router
     ) {
+        this.parentNode = this.parentNodeService.getParentNode()
     }
 
     ngOnInit(): void {
@@ -63,7 +65,11 @@ export class ConceptListComponent implements OnInit {
     }
 
     setTopLevel(pk: number) {
-        this.parentNodeService.setParentNode(pk)
+        console.log(this.parentNode)
+        console.log(pk)
+        if (this.parentNodeService.getParentNode() !== pk)
+            this.parentNodeService.setParentNode(pk)
+        else this.parentNodeService.setParentNode(null)
         console.log("set top level to :" + pk)
     }
 

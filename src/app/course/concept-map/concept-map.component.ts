@@ -67,7 +67,6 @@ export class ConceptMapComponent implements OnInit {
             this.renderGraph()
             return
         }
-
         this.conceptMapGraph.buildGraphFromAdjacencyList(adj)
     }
 
@@ -90,6 +89,10 @@ export class ConceptMapComponent implements OnInit {
     }
 
     logConceptClick(categoryId: number, isTopLevel: boolean) {
+        if (this.parentNode !== categoryId)
+            this.parentNodeService.setParentNode(categoryId)
+        else this.parentNodeService.setParentNode(null)
+        console.log(categoryId)
         this.userActionsService.createCustomAction({
             description: 'User selected a category on the concept map',
             object_type: ActionType.BUTTON,

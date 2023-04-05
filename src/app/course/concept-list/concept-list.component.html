@@ -2,7 +2,7 @@
     <tui-accordion>
         <tui-accordion-item *ngFor="let category of nestedCategories" class="title"
                             [disableHover]="true" (click)="setTopLevel(category.category.pk)"
-                            (close)="setTopLevel(null)" [open]="getTopLevel(category.category.pk)">
+                            [open]="getTopLevel(category.category.pk)">
             <div class="flex flex-wrap gap-3 justify-between">
                 <div class="min-w-[20rem] flex items-center">
                     {{ category.category.name }}
