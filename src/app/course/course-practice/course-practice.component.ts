@@ -3,7 +3,7 @@ import {Course, User} from "@app/_models"
 import {AuthenticationService} from "@app/_services/api/authentication"
 import {CourseService} from "@app/course/_services/course.service"
 import {ActivatedRoute} from "@angular/router"
-import {ConceptViewService} from "@app/_services/api/concept-view.service"
+import {ConceptViewService} from "@app/_services/concept-view.service"
 
 @Component({
     selector: 'app-course-practice',

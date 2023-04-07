@@ -13,8 +13,8 @@
                 <div class="min-w-[5rem] flex items-center float-right">
                     <button
                         (click)="openPracticePage(category.category)"
-                        class="tui-space_vertical-2 justify-center"
-                        size="s"
+                        class="tui-form__button justify-center"
+                        size="m"
                         tuiButton
                         type="button"
                         appearance="flat"
@@ -36,7 +36,7 @@
                         <div class="min-w-[5rem] flex items-center">
                             <button
                                 (click)="openPracticePage(childCategory.category)"
-                                class="tui-space_vertical-2 justify-center"
+                                class="tui-form__button justify-center"
                                 size="s"
                                 tuiButton
                                 type="button"
@@ -54,17 +54,17 @@
 
 <ng-template #skeletonTemplate>
     <tui-accordion>
-        <tui-accordion-item class="title" open="false" [disableHover]="true">
+        <tui-accordion-item class="title" open="false" [size]="'s'" [disableHover]="true">
             <div class="flex flex-wrap gap-3 justify-between">
                 <div class="min-w-[20rem] flex items-center tui-skeleton">
-                    <p>Category</p>
+                    Category
                 </div>
                 <div class="min-w-[5rem] flex items-center tui-skeleton">
-                    <p>0 Questions</p>
+                    0 Questions
                 </div>
                 <div class="min-w-[5rem] flex items-center float-right">
                     <button
-                        class="tui-space_vertical-2 justify-center tui-skeleton"
+                        class="tui-form__button justify-center tui-skeleton"
                         size="m"
                         tuiButton
                         type="button"
