@@ -1,6 +1,6 @@
 <ng-container *ngIf="nestedCategories else skeletonTemplate">
     <tui-accordion>
-        <tui-accordion-item *ngFor="let category of nestedCategories" class="title"
+        <tui-accordion-item *ngFor="let category of nestedCategories" class="title" [size]="'s'"
                             [disableHover]="true" (click)="setTopLevel(category.category.pk)"
                             [open]="getTopLevel(category.category.pk)">
             <div class="flex flex-wrap gap-3 justify-between">
