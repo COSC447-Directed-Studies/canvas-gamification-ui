@@ -23,7 +23,7 @@
                 appearance="secondary"
                 size="l"
                 class="whitespace-nowrap"
-                (click)="enableListView = false"
+                (click)="setListView(false)"
                 [pseudoPressed]="!enableListView"
             >
                 Map View
@@ -34,7 +34,7 @@
                 appearance="secondary"
                 size="l"
                 class="whitespace-nowrap"
-                (click)="enableListView = true"
+                (click)="setListView(true)"
                 [pseudoPressed]="enableListView"
             >
                 List View
