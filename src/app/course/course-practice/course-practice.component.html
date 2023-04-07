@@ -9,20 +9,38 @@
     >
         Back to Practice
     </a>
-    <tui-tabs>
-        <button
-            tuiTab
-            (click)="enableListView = false"
+    <div class="py-2"></div>
+    <div class="flex justify-center">
+        <div
+            tuiGroup
+            class="group"
+            [collapsed]="true"
+            [rounded]="true"
         >
-            Concept Map
-        </button>
-        <button
-            tuiTab
-            (click)="enableListView = true"
-        >
-            List View
-        </button>
-    </tui-tabs>
+            <button
+                tuiButton
+                type="button"
+                appearance="secondary"
+                size="l"
+                class="whitespace-nowrap"
+                (click)="enableListView = false"
+                [pseudoPressed]="!enableListView"
+            >
+                Map View
+            </button>
+            <button
+                tuiButton
+                type="button"
+                appearance="secondary"
+                size="l"
+                class="whitespace-nowrap"
+                (click)="enableListView = true"
+                [pseudoPressed]="enableListView"
+            >
+                List View
+            </button>
+        </div>
+    </div>
     <div class="py-3"></div>
     <app-concept-list *ngIf="enableListView" [currCourse]="course"></app-concept-list>
     <app-concept-map *ngIf="!enableListView" [currCourse]="course"></app-concept-map>
