@@ -92,7 +92,6 @@ export class ConceptMapComponent implements OnInit {
         if (this.parentNode !== categoryId)
             this.parentNodeService.setParentNode(categoryId)
         else this.parentNodeService.setParentNode(null)
-        console.log(categoryId)
         this.userActionsService.createCustomAction({
             description: 'User selected a category on the concept map',
             object_type: ActionType.BUTTON,
