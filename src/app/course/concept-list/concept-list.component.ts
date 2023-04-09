@@ -65,12 +65,9 @@ export class ConceptListComponent implements OnInit {
     }
 
     setTopLevel(pk: number) {
-        console.log(this.parentNode)
-        console.log(pk)
         if (this.parentNodeService.getParentNode() !== pk)
             this.parentNodeService.setParentNode(pk)
         else this.parentNodeService.setParentNode(null)
-        console.log("set top level to :" + pk)
     }
 
     getTopLevel(pk: number): boolean {

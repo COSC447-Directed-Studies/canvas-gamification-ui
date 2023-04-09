@@ -43,7 +43,8 @@ import {
     TuiStepperModule,
     TuiTabsModule,
     TuiTagModule,
-    TuiTextAreaModule, TuiToggleModule
+    TuiTextAreaModule,
+    TuiToggleModule
 } from '@taiga-ui/kit'
 import {
     TuiButtonModule,
@@ -51,7 +52,8 @@ import {
     TuiDataListModule,
     TuiDescribedByModule,
     TuiDialogModule,
-    TuiErrorModule, TuiGroupModule,
+    TuiErrorModule,
+    TuiGroupModule,
     TuiHintModule,
     TuiHostedDropdownModule,
     TuiLinkModule,
