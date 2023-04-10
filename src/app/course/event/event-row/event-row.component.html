@@ -148,10 +148,10 @@
         <ng-template #statsTooltip>
             Stats
         </ng-template>
-        <button *ngIf="event.has_edit_permission"
+        <button *ngIf="event.has_edit_permission && !event.featured"
                 (click)="setFeatured()"
-                [disabled]="event.featured"
-                [tuiHint]="featuredTooltip"
+                [tuiHint]="notFeaturedTooltip"
+                [disabled]="event.is_closed"
                 class="tui-space_vertical-2"
                 icon="tuiIconStar"
                 size="s"
@@ -162,8 +162,25 @@
                 tuiIconButton
                 type="button"
         ></button>
-        <ng-template #featuredTooltip>
+        <ng-template #notFeaturedTooltip>
             Set featured
+        </ng-template>
+        <button *ngIf="event.has_edit_permission && event.featured"
+                (click)="clearFeatured()"
+                [tuiHint]="featuredTooltip"
+                [disabled]="event.is_closed"
+                class="tui-space_vertical-2"
+                icon="tuiIconStar"
+                size="s"
+                tuiDescribedBy="clear featured"
+                tuiHintDirection="top-left"
+                tuiHintId="clear featured"
+                tuiHintMode="onDark"
+                tuiIconButton
+                type="button"
+        ></button>
+        <ng-template #featuredTooltip>
+            Clear featured
         </ng-template>
     </div>
 </div>
