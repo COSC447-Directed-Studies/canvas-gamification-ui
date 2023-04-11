@@ -97,10 +97,11 @@ export class CourseEventsSnippetComponent implements OnInit {
     setFeatured(eventId: number) {
         return this.courseEventService.setFeatured(eventId).subscribe(() => {
             this.init()
-            this.notificationsService.show('Assessment successfully marked as featured.', {
-                status: TuiNotification.Success,
-            }).subscribe()
         })
+    }
+
+    clearFeatured(eventId: number) {
+        return this.courseEventService.clearFeatured(eventId).subscribe()
     }
 
     /**
@@ -125,6 +126,10 @@ export class CourseEventsSnippetComponent implements OnInit {
      * @param courseId - The course you are importing the event into.
      */
     importCourseEvent(event: CourseEvent, courseId: number): void {
+        const holdFeatured: boolean = event.featured
+        if(holdFeatured){
+            this.clearFeatured(event.id)
+        }
         this.courseEventService.importCourseEvent(event, courseId).subscribe((response) => {
             if (response.status === 201) {
                 this.notificationsService
@@ -133,5 +138,8 @@ export class CourseEventsSnippetComponent implements OnInit {
                     }).subscribe()
             }
         })
+        if(holdFeatured){
+            this.setFeatured(event.id)
+        }
     }
 }
