@@ -13,7 +13,7 @@
                         tuiButton
                         type="button"
                     >
-                        Export
+                        Export Usage Data
                     </button>
                 </tui-hosted-dropdown>
                 <ng-template #exportDropdownIcon>
@@ -26,10 +26,19 @@
                 <ng-template #exportDropdownContent>
                     <tui-data-list>
                         <a [routerLink]="['export', 'page-view']" tuiOption>
-                            Page Views
+                            Export Page Views
                         </a>
                         <a [routerLink]="['export', 'action']" tuiOption>
-                            User Actions
+                            Export User Actions
+                        </a>
+                        <a [routerLink]="['export', 'consent']" tuiOption>
+                            Export User Consents
+                        </a>
+                        <a [routerLink]="['export', 'user']" tuiOption>
+                            Export Users
+                        </a>
+                        <a [routerLink]="['export', 'survey']" tuiOption>
+                            Export Survey Data
                         </a>
                     </tui-data-list>
                 </ng-template>
