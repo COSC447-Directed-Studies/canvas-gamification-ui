@@ -80,7 +80,7 @@ export class CourseEventForm {
                 [Validators.required]
             ),
             questionSets: new FormArray(
-                [CourseEventForm.createQuestionSetForm()]
+                []
             )
         }, {validator: CourseEventForm.dateValidator} as AbstractControlOptions)
     }
