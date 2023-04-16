@@ -17,12 +17,7 @@ export class EventStatsBarChartComponent implements OnInit {
     ngOnInit(): void {
         this.labelsX = Object.keys(this.answers)
             .map(convert)
-            .map((label: string) => {
-                if (label.length > 90) {
-                    return label.slice(0, 90) + '...'
-                }
-                return label
-            })
+            .map((label: string) => label.length < 90 ? label : label.slice(0, 90) + '...')
         this.value = [Object.values(this.answers)]
         const max = this.getMax()
         this.labelsY = ["0", String(max / 2), String(max)]
