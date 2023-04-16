@@ -61,9 +61,7 @@ export class PracticeProblemComponent implements OnInit, OnDestroy {
     ) {
     }
 
-    ngOnInit()
-        :
-        void {
+    ngOnInit(): void {
         this.difficulty = this.route.snapshot.queryParamMap.get('difficulty')
         this.courseId = Number.parseInt(this.route.snapshot.paramMap.get('courseId'))
 
@@ -124,18 +122,14 @@ export class PracticeProblemComponent implements OnInit, OnDestroy {
         }))
     }
 
-    ngOnDestroy()
-        :
-        void {
+    ngOnDestroy(): void {
         this.subscriptions.unsubscribe()
     }
 
     /**
      * Skips to the next question in the list by incrementing the cursor.
      */
-    nextQuestion()
-        :
-        void {
+    nextQuestion(): void {
         this.cursor = (this.cursor + 1) % this.uqjs.length
         this.updateCurrentQuestion()
         this.userActionService.createCustomAction({
@@ -154,9 +148,7 @@ export class PracticeProblemComponent implements OnInit, OnDestroy {
     /**
      * Returns to the previous question in the list by decrementing the cursor value.
      */
-    prevQuestion()
-        :
-        void {
+    prevQuestion(): void {
         this.cursor = (this.cursor + this.uqjs.length - 1) % this.uqjs.length
         this.updateCurrentQuestion()
     }
@@ -164,9 +156,7 @@ export class PracticeProblemComponent implements OnInit, OnDestroy {
     /**
      * Updates the currentQuestionId based on the cursor.
      */
-    updateCurrentQuestion()
-        :
-        void {
+    updateCurrentQuestion(): void {
         this.currentQuestionId = this.uqjs[this.cursor]
     }
 
@@ -178,12 +168,7 @@ export class PracticeProblemComponent implements OnInit, OnDestroy {
      * is clicked in the select input.
      * @param solvedEvent Whether or not to include solved questions
      */
-    updateQuestions(difficultyEvent
-                        :
-                        string, solvedEvent
-                        :
-                        boolean):
-        void {
+    updateQuestions(difficultyEvent: string, solvedEvent: boolean): void {
         this.difficulty = difficultyEvent
         this.include_solved = solvedEvent
         this.cursor = 0
