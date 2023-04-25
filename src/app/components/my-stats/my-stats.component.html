@@ -151,18 +151,7 @@
             <div class="tui-space_vertical-5 tui-col">
                 <div class="flex-container">
                     <h4 class="tui-text_h4 tui-space_bottom-5">Active Courses</h4>
-                    <ng-container *ngIf="activeCourses">
-                        <ng-container *ngFor="let course of activeCourses">
-                            <button
-                                class="tui-space_bottom-3"
-                                size="l"
-                                tuiButton
-                            >
-                                {{course.name}}
-                            </button>
-                        </ng-container>
-                    </ng-container>
-                    <ng-container *ngIf="!activeCourses.length">
+                    <ng-container>
                         <div class="flex justify-center items-center w-full h-32">
                             <tui-marker-icon
                                 class="tui-space_right-4"
@@ -252,16 +241,16 @@
                                     <th class="tui-table__th">Number Completed</th>
                                 </tr>
                                 <tr class="tui-table__tr tui-table__tr_border_none">
-                                    <td class="tui-table__td tui-skeleton">content</td>
-                                    <td class="tui-table__td tui-skeleton">content</td>
+                                    <td class="tui-table__td tui-skeleton">Multiple Choice Questions</td>
+                                    <td class="tui-table__td tui-skeleton">0</td>
                                 </tr>
                                 <tr class="tui-table__tr tui-table__tr_border_none">
-                                    <td class="tui-table__td tui-skeleton">content</td>
-                                    <td class="tui-table__td tui-skeleton">content</td>
+                                    <td class="tui-table__td tui-skeleton">Parson's</td>
+                                    <td class="tui-table__td tui-skeleton">0</td>
                                 </tr>
                                 <tr class="tui-table__tr tui-table__tr_border_none">
-                                    <td class="tui-table__td tui-skeleton">content</td>
-                                    <td class="tui-table__td tui-skeleton">content</td>
+                                    <td class="tui-table__td tui-skeleton">Java</td>
+                                    <td class="tui-table__td tui-skeleton">0</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -275,7 +264,7 @@
                                 <th class="tui-table__th">Number Completed</th>
                             </tr>
                             <tr class="tui-table__tr tui-table__tr_border_none">
-                                <td class="tui-table__td tui-skeleton">Object Oriented Programming</td>
+                                <td class="tui-table__td tui-skeleton">content</td>
                                 <td class="tui-table__td tui-skeleton">0</td>
                             </tr>
                             <tr class="tui-table__tr tui-table__tr_border_none">
