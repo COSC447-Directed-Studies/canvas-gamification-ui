@@ -83,11 +83,10 @@ export class SubmissionSnippetComponent implements OnChanges, OnInit {
         ).subscribe()
     }
 
-    //dont open this, open a html template set up in the html a la assignment is closed
-    openMCQSubmissionDialog(content: PolymorpheusContent<TuiDialogContext>): void {
+    openMCQSubmissionDialog(content: PolymorpheusContent<TuiDialogContext>, index: number): void {
         this.dialogService.open(content, {
             closeable: false,
-            label: 'Edit finished assessment?'
+            label: `Submission ${index}`
         }).subscribe()
     }
 }
