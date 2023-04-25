@@ -59,7 +59,9 @@ export class SubmissionSnippetComponent implements OnChanges, OnInit {
         )
             .pipe(map(submissions => submissions.map(submission => ({
                 ...submission,
-                safeAnswer: [this.sanitizer.bypassSecurityTrustHtml(submission.answer)]
+                safeAnswer: [this.sanitizer.bypassSecurityTrustHtml(
+                    submission.answer_display.toString()
+                )]
             }))))
             .subscribe(submissions => {
                 this.previousSubmissions = submissions

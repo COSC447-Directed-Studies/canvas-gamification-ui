@@ -24,7 +24,7 @@
                                 / {{submission.token_value.toFixed(2) }}</p>
                             <p class="tui-island__paragraph">Answer:</p>
                             <ng-container *ngIf="submission.show_answer else noAnswerShown">
-                                <div *ngFor="let safeAnswer of submission.answer_display"
+                                <div *ngFor="let safeAnswer of submission.safeAnswer"
                                      [innerHTML]="safeAnswer"></div>
                             </ng-container>
                             <ng-template #noAnswerShown>
