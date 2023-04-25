@@ -10,8 +10,8 @@ import {
 } from '@angular/core'
 import {QuestionSubmission} from '@app/_models/question_submission'
 import {DomSanitizer} from "@angular/platform-browser"
-import {TuiDialogService} from '@taiga-ui/core'
-import {PolymorpheusComponent} from '@tinkoff/ng-polymorpheus'
+import {TuiDialogContext, TuiDialogService} from '@taiga-ui/core'
+import {PolymorpheusComponent, PolymorpheusContent} from '@tinkoff/ng-polymorpheus'
 import {SubmissionViewComponent} from '@app/problems/submission-view/submission-view.component'
 import {SubmissionService} from "@app/problems/_services/submission.service"
 import {map} from "rxjs/operators"
@@ -81,5 +81,13 @@ export class SubmissionSnippetComponent implements OnChanges, OnInit {
                 label: `Submission ${index}`
             }
         ).subscribe()
+    }
+
+    //dont open this, open a html template set up in the html a la assignment is closed
+    openMCQSubmissionDialog(content: PolymorpheusContent<TuiDialogContext>): void {
+        this.dialogService.open(content, {
+            closeable: false,
+            label: 'Edit finished assessment?'
+        }).subscribe()
     }
 }
