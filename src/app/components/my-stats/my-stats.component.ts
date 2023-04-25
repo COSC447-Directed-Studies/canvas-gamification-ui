@@ -53,7 +53,6 @@ export class MyStatsComponent implements OnInit {
                     return course.status === STATUS.active
                 })
             })
-        console.log(this.activeCourses)
         this.categoryService.getCategories().subscribe((categories) => {
             this.topLevelCategories = categories.filter(c => !c.parent)
 
