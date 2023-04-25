@@ -27,7 +27,7 @@ export class MyStatsComponent implements OnInit {
     parsonsNum: number
     javaNum: number
 
-    activeCourses: Course[]
+    activeCourses: Course[] = []
 
     totalQuestionsSolved: number
     questionsSolvedByCategory: number[] = []
@@ -53,6 +53,7 @@ export class MyStatsComponent implements OnInit {
                     return course.status === STATUS.active
                 })
             })
+        console.log(this.activeCourses)
         this.categoryService.getCategories().subscribe((categories) => {
             this.topLevelCategories = categories.filter(c => !c.parent)
 

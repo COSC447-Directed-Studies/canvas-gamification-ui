@@ -11,13 +11,25 @@
                     <ng-container *ngIf="activeCourses">
                         <ng-container *ngFor="let course of activeCourses">
                             <button
-                                class=" tui-space_bottom-3"
+                                class="tui-space_bottom-3"
                                 size="l"
                                 tuiButton
                             >
                                 {{course.name}}
                             </button>
                         </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="!activeCourses.length">
+                        <div class="flex justify-center items-center w-full h-32">
+                            <tui-marker-icon
+                                class="tui-space_right-4"
+                                size="s"
+                                src="tuiIconAlertCircleLarge"
+                            ></tui-marker-icon>
+                            <h2 class="tui-text_body-xl">
+                                Looks like you don't have any active courses
+                            </h2>
+                        </div>
                     </ng-container>
                 </div>
             </div>
@@ -107,7 +119,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="tui-col_lg-6 tui-col_md-4 tui-col_xs-4 ">
+                    <div class="tui-col_lg-6 tui-col_md-12 tui-col_xs-6">
                         <table class="tui-table tui-table_font-size_m ">
                             <tbody>
                             <tr class="tui-table__tr tui-table__tr_border_none">
